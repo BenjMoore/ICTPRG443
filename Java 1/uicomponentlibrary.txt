@@ -1,0 +1,50 @@
+package com.company;
+
+
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class Main extends JFrame implements ActionListener
+{
+    JButton btnClose, btnInput;
+    JTextField txtMessage;
+    JLabel lblLabel;
+
+    public static void main(String[] args)
+    {
+        Main frm = new Main();
+    }
+
+    public Main()
+    {
+        SpringLayout myLayout = new SpringLayout();
+        this.setSize(500,500);
+        this.setLayout(myLayout);
+        this.getContentPane().setBackground(Color.cyan);
+
+        btnClose = uicomponentlibrary.CreateaJbutton("Close",80,50,50,50,this,this, myLayout);
+        btnInput = uicomponentlibrary.CreateaJbutton("Input",80,25,25,10,this,this, myLayout);
+        txtMessage = uicomponentlibrary.Createatextfield("Welcome", Color.RED, Color.lightGray,this, myLayout );
+        lblLabel = uicomponentlibrary.CreateLabel("Welcome", Color.RED,this, myLayout );
+
+        this.setVisible(true);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent actionEvent)
+    {
+        if(actionEvent.getSource() == btnClose)
+        {
+            System.exit(0);
+        }
+        if(actionEvent.getSource() == btnInput)
+        {
+            System.out.println(txtMessage.getText());
+            txtMessage.setText("Hello Everyone");
+
+        }
+    }
+}
