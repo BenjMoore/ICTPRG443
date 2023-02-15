@@ -1,6 +1,8 @@
 package com.company;
 import javax.swing.*;
 import javax.swing.border.Border;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -155,7 +157,7 @@ public class Main extends JFrame implements ActionListener {
         this.add(txtFilters);
 
         // Text Fields  \\
-        customerList = new JTextArea();
+        customerList = new JTextArea("Customers displayed here!");
         customerList.setLineWrap(true);
         customerList.setWrapStyleWord(true);
         Border border = BorderFactory.createLineBorder(Color.BLACK);
@@ -219,13 +221,6 @@ public class Main extends JFrame implements ActionListener {
 
         // Buttons //
 
-        FullBack = new JButton("|<");
-        FullBack.addActionListener(this);
-        FullBack.setSize(80, 25);
-        myLayout.putConstraint(SpringLayout.WEST, FullBack, 380, SpringLayout.WEST, this);
-        myLayout.putConstraint(SpringLayout.NORTH, FullBack, 180, SpringLayout.NORTH, this);
-       // FullBack.addActionListener(new ActionListener);
-        this.add(FullBack);
 
 
         Back = new JButton("<");
@@ -233,13 +228,39 @@ public class Main extends JFrame implements ActionListener {
         Back.setSize(80, 25);
         myLayout.putConstraint(SpringLayout.WEST, Back, 420, SpringLayout.WEST, this);
         myLayout.putConstraint(SpringLayout.NORTH, Back, 180, SpringLayout.NORTH, this);
+        Back.setForeground(Color.BLACK);
+        Back.setBackground(Color.GRAY);
+        Border line = new LineBorder(Color.BLACK);
+        Border margin = new EmptyBorder(5, 15, 5, 15);
+        Border compound = new CompoundBorder(line, margin);
+        Back.setBorder(compound);
         this.add(Back);
+
+        FullBack = new JButton("|<");
+        FullBack.addActionListener(this);
+        FullBack.setSize(80, 25);
+        myLayout.putConstraint(SpringLayout.WEST, FullBack, 380, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.NORTH, FullBack, 180, SpringLayout.NORTH, this);
+        FullBack.setForeground(Color.BLACK);
+        FullBack.setBackground(Color.GRAY);
+        Border line11 = new LineBorder(Color.BLACK);
+        Border margin11 = new EmptyBorder(5, 15, 5, 15);
+        Border compound11 = new CompoundBorder(line, margin);
+        FullBack.setBorder(compound);
+        // FullBack.addActionListener(new ActionListener);
+        this.add(FullBack);
 
         Forward = new JButton(">");
         Forward.addActionListener(this);
         Forward.setSize(80, 25);
         myLayout.putConstraint(SpringLayout.WEST, Forward, 460, SpringLayout.WEST, this);
         myLayout.putConstraint(SpringLayout.NORTH, Forward, 180, SpringLayout.NORTH, this);
+        Forward.setForeground(Color.BLACK);
+        Forward.setBackground(Color.GRAY);
+        Border line1 = new LineBorder(Color.BLACK);
+        Border margin1 = new EmptyBorder(5, 15, 5, 15);
+        Border compound1 = new CompoundBorder(line, margin);
+        Forward.setBorder(compound);
         this.add(Forward);
 
         filterBtn = new JButton("Filer!");
@@ -248,6 +269,12 @@ public class Main extends JFrame implements ActionListener {
         myLayout.putConstraint(SpringLayout.WEST, filterBtn, 340, SpringLayout.WEST, this);
         myLayout.putConstraint(SpringLayout.NORTH, filterBtn, 270, SpringLayout.NORTH, this);
         // FullBack.addActionListener(new ActionListener);
+        filterBtn.setForeground(Color.BLACK);
+        filterBtn.setBackground(Color.GRAY);
+        Border line2 = new LineBorder(Color.BLACK);
+        Border margin2 = new EmptyBorder(5, 15, 5, 15);
+        Border compound2 = new CompoundBorder(line, margin);
+        filterBtn.setBorder(compound);
         this.add(filterBtn);
 
         FullForward = new JButton(">|");
@@ -255,18 +282,36 @@ public class Main extends JFrame implements ActionListener {
         FullForward.setSize(80, 25);
         myLayout.putConstraint(SpringLayout.WEST, FullForward, 500, SpringLayout.WEST, this);
         myLayout.putConstraint(SpringLayout.NORTH, FullForward, 180, SpringLayout.NORTH, this);
+        FullForward.setForeground(Color.BLACK);
+        FullForward.setBackground(Color.GRAY);
+        Border line3 = new LineBorder(Color.BLACK);
+        Border margin3 = new EmptyBorder(5, 15, 5, 15);
+        Border compound3 = new CompoundBorder(line, margin);
+        FullForward.setBorder(compound);
         this.add(FullForward);
 
         Find = new JButton("Find");
         Find.addActionListener(this);
         myLayout.putConstraint(SpringLayout.WEST, Find, 500, SpringLayout.WEST, this);
         myLayout.putConstraint(SpringLayout.NORTH, Find, 55, SpringLayout.NORTH, this);
+        Find.setForeground(Color.BLACK);
+        Find.setBackground(Color.GRAY);
+        Border line4 = new LineBorder(Color.BLACK);
+        Border margin4 = new EmptyBorder(5, 15, 5, 15);
+        Border compound4 = new CompoundBorder(line, margin);
+        Find.setBorder(compound);
         this.add(Find);
 
         Exit = new JButton("Exit");
         Exit.addActionListener(this);
         myLayout.putConstraint(SpringLayout.WEST, Exit, 510, SpringLayout.WEST, this);
         myLayout.putConstraint(SpringLayout.NORTH, Exit, 475, SpringLayout.NORTH, this);
+        Exit.setForeground(Color.BLACK);
+        Exit.setBackground(Color.GRAY);
+        Border line5 = new LineBorder(Color.BLACK);
+        Border margin5 = new EmptyBorder(5, 15, 5, 15);
+        Border compound5 = new CompoundBorder(line, margin);
+        Exit.setBorder(compound);
         this.add(Exit);
 
         ///
@@ -274,18 +319,36 @@ public class Main extends JFrame implements ActionListener {
         New.addActionListener(this);
         myLayout.putConstraint(SpringLayout.WEST, New, 425, SpringLayout.WEST, this);
         myLayout.putConstraint(SpringLayout.NORTH, New, 100, SpringLayout.NORTH, this);
+        New.setForeground(Color.BLACK);
+        New.setBackground(Color.GRAY);
+        Border line6 = new LineBorder(Color.BLACK);
+        Border margin6 = new EmptyBorder(5, 15, 5, 15);
+        Border compound6 = new CompoundBorder(line, margin);
+        New.setBorder(compound);
         this.add(New);
 
         Save = new JButton(" Save ");
         Save.addActionListener(this);
         myLayout.putConstraint(SpringLayout.WEST, Save, 425, SpringLayout.WEST, this);
         myLayout.putConstraint(SpringLayout.NORTH, Save, 125, SpringLayout.NORTH, this);
+        Save.setForeground(Color.BLACK);
+        Save.setBackground(Color.GRAY);
+        Border line7 = new LineBorder(Color.BLACK);
+        Border margin7 = new EmptyBorder(5, 15, 5, 15);
+        Border compound7 = new CompoundBorder(line, margin);
+        Save.setBorder(compound);
         this.add(Save);
 
         Delete = new JButton("Delete");
         Delete.addActionListener(this);
         myLayout.putConstraint(SpringLayout.WEST, Delete, 425, SpringLayout.WEST, this);
         myLayout.putConstraint(SpringLayout.NORTH, Delete, 150, SpringLayout.NORTH, this);
+        Delete.setForeground(Color.BLACK);
+        Delete.setBackground(Color.GRAY);
+        Border line8 = new LineBorder(Color.BLACK);
+        Border margin8 = new EmptyBorder(5, 15, 5, 15);
+        Border compound8 = new CompoundBorder(line, margin);
+        Delete.setBorder(compound);
         this.add(Delete);
 
         txtBinary_Submit = new JButton("Binary Search by contact name");
@@ -293,13 +356,25 @@ public class Main extends JFrame implements ActionListener {
         txtBinary_Submit.setSize(80, 25);
         myLayout.putConstraint(SpringLayout.WEST, txtBinary_Submit, 220, SpringLayout.WEST, this);
         myLayout.putConstraint(SpringLayout.NORTH, txtBinary_Submit, 220, SpringLayout.NORTH, this);
+        txtBinary_Submit.setForeground(Color.BLACK);
+        txtBinary_Submit.setBackground(Color.GRAY);
+        Border line9 = new LineBorder(Color.BLACK);
+        Border margin9 = new EmptyBorder(5, 15, 5, 15);
+        Border compound9 = new CompoundBorder(line, margin);
+        txtBinary_Submit.setBorder(compound);
         this.add(txtBinary_Submit);
 
-        txtSortbyName = new JButton("Search by contact name");
+        txtSortbyName = new JButton("Sort by contact name");
         txtSortbyName.addActionListener(this);
         txtSortbyName.setSize(80, 25);
         myLayout.putConstraint(SpringLayout.WEST, txtSortbyName, 25, SpringLayout.WEST, this);
         myLayout.putConstraint(SpringLayout.NORTH, txtSortbyName, 220, SpringLayout.NORTH, this);
+        txtSortbyName.setForeground(Color.BLACK);
+        txtSortbyName.setBackground(Color.GRAY);
+        Border line10 = new LineBorder(Color.BLACK);
+        Border margin10 = new EmptyBorder(5, 15, 5, 15);
+        Border compound10 = new CompoundBorder(line, margin);
+        txtSortbyName.setBorder(compound);
         this.add(txtSortbyName);
 
 
@@ -314,7 +389,7 @@ public class Main extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         //If statements to check which component event triggered
-        if (e.getSource() == btnClose) {
+        if (e.getSource() == Exit) {
             System.exit(0);//Close application
         }
         if (e.getSource() == btnInput) {
