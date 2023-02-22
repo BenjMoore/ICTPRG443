@@ -20,8 +20,8 @@ public class ReadWrite
         public static void main(String[] args) {
             try
             {
-                FileWriter myWriter = new FileWriter("birthdays.csv");
-                myWriter.write("");
+                FileWriter myWriter = new FileWriter("/com.company/data.csv");
+                myWriter.write("Test");
                 myWriter.close();
                 System.out.println("Successfully wrote to the file.");
 

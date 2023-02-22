@@ -63,13 +63,13 @@ public class Main extends JFrame implements ActionListener {
     {
         new Main();//Creating instance of Main class form
         new ReadWrite.WriteToFile();
+
     }
 
 
     public Main() throws FileNotFoundException{
 
-
-
+        new ReadWrite();
         SpringLayout myLayout = new SpringLayout();//Creating Spring layout
         this.setLayout(myLayout);//Setting spring layout to form
         this.setSize(600, 550);//Set Form size
