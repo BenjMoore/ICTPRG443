@@ -7,12 +7,11 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Main extends JFrame implements ActionListener {
@@ -27,10 +26,10 @@ public class Main extends JFrame implements ActionListener {
     public static  JButton btnClose;
     public static  Button btnInput;
     public static  JTextField txtName;
-    public static JTextField txtLikes;
-    public static JTextField txtDislikes;
-    public static JTextField txtDay;
-    public static JTextField txtMonth;
+    public static JTextField txtContactType;
+    public static JTextField txtPhonenum;
+    public static JTextField txtEmail;
+    public static JTextField txtNotes;
     public static  JTextField txtSearch;
     public static JTextField txtBinary_Query;
     public static JLabel txtBinary_Sub;
@@ -38,9 +37,9 @@ public class Main extends JFrame implements ActionListener {
     public static JLabel Searchlbl;
     public static JLabel lblTitle;
     public static JLabel lblName;
-    public static JLabel lblLikes;
-    public static JLabel lblDay;
-    public static JLabel lblMonth;
+    public static JLabel lblContactType;
+    public static JLabel lblEmail;
+    public static JLabel lblNotes;
     public static JLabel lblSearch;
     public static JTextField txtMessage;
     public static JButton FullBack;
@@ -58,11 +57,14 @@ public class Main extends JFrame implements ActionListener {
     public static JLabel txtFilters;
     public static JButton filterBtn;
     public static JTextArea customerList;
+    public static JLabel lblPhonenum;
+    public static List<String[]> data;
+    public static int currentRecord;
 
     public static void main(String[] args) throws FileNotFoundException
     {
-        new Main();//Creating instance of Main class form
-        new ReadWrite.WriteToFile();
+        new Main();
+        //ReadFile
 
     }
 
@@ -100,36 +102,36 @@ public class Main extends JFrame implements ActionListener {
         this.add(lblName);
 
         // Likes
-        lblLikes = new JLabel("<html><span bgcolor=\"Black\"> Contact Type:  </span></html>");
-        myLayout.putConstraint(SpringLayout.WEST, lblLikes, 25, SpringLayout.WEST, this);
-        myLayout.putConstraint(SpringLayout.NORTH, lblLikes, 95, SpringLayout.NORTH, this);
-        lblLikes.setForeground(Color.WHITE);
-        lblLikes.setFont(new Font("Calbri", Font.BOLD, 12));
-        this.add(lblLikes);
+        lblContactType = new JLabel("<html><span bgcolor=\"Black\"> Contact Type:  </span></html>");
+        myLayout.putConstraint(SpringLayout.WEST, lblContactType, 25, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.NORTH, lblContactType, 95, SpringLayout.NORTH, this);
+        lblContactType.setForeground(Color.WHITE);
+        lblContactType.setFont(new Font("Calbri", Font.BOLD, 12));
+        this.add(lblContactType);
 
         // Dislikes
-        lblLikes = new JLabel("<html><span bgcolor=\"Black\"> Phone/Mobile:  </span></html>");
-        myLayout.putConstraint(SpringLayout.WEST, lblLikes, 25, SpringLayout.WEST, this);
-        myLayout.putConstraint(SpringLayout.NORTH, lblLikes, 125, SpringLayout.NORTH, this);
-        lblLikes.setForeground(Color.WHITE);
-        lblLikes.setFont(new Font("Calbri", Font.BOLD, 12));
-        this.add(lblLikes);
+        lblPhonenum = new JLabel("<html><span bgcolor=\"Black\"> Phone/Mobile:  </span></html>");
+        myLayout.putConstraint(SpringLayout.WEST, lblPhonenum, 25, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.NORTH, lblPhonenum, 125, SpringLayout.NORTH, this);
+        lblPhonenum.setForeground(Color.WHITE);
+        lblPhonenum.setFont(new Font("Calbri", Font.BOLD, 12));
+        this.add(lblPhonenum);
 
         // Bday Day
-        lblDay = new JLabel("<html><span bgcolor=\"Black\"> Weblink/Email:  </span></html>");
-        myLayout.putConstraint(SpringLayout.WEST, lblDay, 25, SpringLayout.WEST, this);
-        myLayout.putConstraint(SpringLayout.NORTH, lblDay, 155, SpringLayout.NORTH, this);
-        lblDay.setForeground(Color.WHITE);
-        lblDay.setFont(new Font("Calbri", Font.BOLD, 12));
-        this.add(lblDay);
+        lblEmail = new JLabel("<html><span bgcolor=\"Black\"> Weblink/Email:  </span></html>");
+        myLayout.putConstraint(SpringLayout.WEST, lblEmail, 25, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.NORTH, lblEmail, 155, SpringLayout.NORTH, this);
+        lblEmail.setForeground(Color.WHITE);
+        lblEmail.setFont(new Font("Calbri", Font.BOLD, 12));
+        this.add(lblEmail);
 
         // Bday Month
-        lblMonth = new JLabel("<html><span bgcolor=\"Black\"> Contact Notes:  </span></html>");
-        myLayout.putConstraint(SpringLayout.WEST, lblMonth, 25, SpringLayout.WEST, this);
-        myLayout.putConstraint(SpringLayout.NORTH, lblMonth, 185, SpringLayout.NORTH, this);
-        lblMonth.setForeground(Color.WHITE);
-        lblMonth.setFont(new Font("Calbri", Font.BOLD, 12));
-        this.add(lblMonth);
+        lblNotes = new JLabel("<html><span bgcolor=\"Black\"> Contact Notes:  </span></html>");
+        myLayout.putConstraint(SpringLayout.WEST, lblNotes, 25, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.NORTH, lblNotes, 185, SpringLayout.NORTH, this);
+        lblNotes.setForeground(Color.WHITE);
+        lblNotes.setFont(new Font("Calbri", Font.BOLD, 12));
+        this.add(lblNotes);
 
         // Search
 
@@ -182,33 +184,33 @@ public class Main extends JFrame implements ActionListener {
         txtName.setFont(new Font("Calbri", Font.PLAIN, 9));
         this.add(txtName);
 
-        txtLikes = new JTextField("", 25);
-        myLayout.putConstraint(SpringLayout.WEST, txtLikes, 125, SpringLayout.WEST, this);
-        myLayout.putConstraint(SpringLayout.NORTH, txtLikes, 95, SpringLayout.NORTH, this);
-        txtLikes.setForeground(Color.BLACK);
-        txtLikes.setFont(new Font("Calbri", Font.PLAIN, 9));
-        this.add(txtLikes);
+        txtContactType = new JTextField("", 25);
+        myLayout.putConstraint(SpringLayout.WEST, txtContactType, 125, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.NORTH, txtContactType, 95, SpringLayout.NORTH, this);
+        txtContactType.setForeground(Color.BLACK);
+        txtContactType.setFont(new Font("Calbri", Font.PLAIN, 9));
+        this.add(txtContactType);
 
-        txtDislikes = new JTextField("", 25);
-        myLayout.putConstraint(SpringLayout.WEST, txtDislikes, 125, SpringLayout.WEST, this);
-        myLayout.putConstraint(SpringLayout.NORTH, txtDislikes, 125, SpringLayout.NORTH, this);
-        txtDislikes.setForeground(Color.BLACK);
-        txtDislikes.setFont(new Font("Calbri", Font.PLAIN, 9));
-        this.add(txtDislikes);
+        txtPhonenum = new JTextField("", 25);
+        myLayout.putConstraint(SpringLayout.WEST, txtPhonenum, 125, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.NORTH, txtPhonenum, 125, SpringLayout.NORTH, this);
+        txtPhonenum.setForeground(Color.BLACK);
+        txtPhonenum.setFont(new Font("Calbri", Font.PLAIN, 9));
+        this.add(txtPhonenum);
 
-        txtDay = new JTextField("", 25);
-        myLayout.putConstraint(SpringLayout.WEST, txtDay, 125, SpringLayout.WEST, this);
-        myLayout.putConstraint(SpringLayout.NORTH, txtDay, 155, SpringLayout.NORTH, this);
-        txtDay.setForeground(Color.BLACK);
-        txtDay.setFont(new Font("Calbri", Font.PLAIN, 9));
-        this.add(txtDay);
+        txtEmail = new JTextField("", 25);
+        myLayout.putConstraint(SpringLayout.WEST, txtEmail, 125, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.NORTH, txtEmail, 155, SpringLayout.NORTH, this);
+        txtEmail.setForeground(Color.BLACK);
+        txtEmail.setFont(new Font("Calbri", Font.PLAIN, 9));
+        this.add(txtEmail);
 
-        txtMonth = new JTextField("", 25);
-        myLayout.putConstraint(SpringLayout.WEST, txtMonth, 125, SpringLayout.WEST, this);
-        myLayout.putConstraint(SpringLayout.NORTH, txtMonth, 185, SpringLayout.NORTH, this);
-        txtMonth.setForeground(Color.BLACK);
-        txtMonth.setFont(new Font("Calbri", Font.PLAIN, 9));
-        this.add(txtMonth);
+        txtNotes = new JTextField("", 25);
+        myLayout.putConstraint(SpringLayout.WEST, txtNotes, 125, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.NORTH, txtNotes, 185, SpringLayout.NORTH, this);
+        txtNotes.setForeground(Color.BLACK);
+        txtNotes.setFont(new Font("Calbri", Font.PLAIN, 9));
+        this.add(txtNotes);
 
         txtSearch = new JTextField("", 8);
         myLayout.putConstraint(SpringLayout.WEST, txtSearch, 400, SpringLayout.WEST, this);
@@ -396,6 +398,80 @@ public class Main extends JFrame implements ActionListener {
             System.out.println(txtMessage.getText());//Gets text from textfield & prints to console
             txtMessage.setText("Hello Java Class");//Sets text in textfield.
         }
+        if(e.getSource() == Save)
+        {
+            try {
+                data = ReadWrite.read("..\\ICTPRG443\\Java_Assesment\\src\\com\\company\\data.csv");
+                for (String[] row : data) {
+                    for (String cell : row) {
+                        System.out.print(cell + " <--> ");
+                        txtName.setText(row[0]);
+                        txtContactType.setText(row[1]);
+                        txtPhonenum.setText(row[2]);
+                        txtEmail.setText(row[3]);
+                        txtNotes.setText(row[4]);
+
+                    }
+                    System.out.println();
+                }
+            } catch (IOException f) {
+                System.err.println("Error reading CSV file: " + f.getMessage());
+            }
+        }
+        if(e.getSource() == New)
+        {
+            int i = 0;
+            BufferedWriter writer = null;
+
+            try {
+                data.add(new String[5]);
+                currentRecord = data.size();
+                for (String[] row : data) {
+                    for (String cell : row) {
+                        System.out.print(cell + " <--> ");
+                        String txtbox = txtName.getText();
+                        data.add(txtbox);
+                        //txtContactType.getText(row[1]);
+                        //txtPhonenum.getText(row[2]);
+                        //txtEmail.getText(row[3]);
+                        //txtNotes.getText(row[4]);
+
+                    }
+                    System.out.println();
+                }
+                writer = new BufferedWriter(new FileWriter("..\\ICTPRG443\\Java_Assesment\\src\\com\\company\\data.csv", true));
+
+            }
+            catch (IOException ioException)
+            {
+                ioException.printStackTrace();
+            }
+
+            while (data != null)
+            {
+                try
+                {
+                    writer.write(String.valueOf(data.get(i)));
+                    i++;
+                }
+                catch (IOException ioException)
+                {
+                    ioException.printStackTrace();
+                }
+
+            }
+            String content = "\ntest";
+            try
+            {
+                ReadWrite.writeToFile("..\\ICTPRG443\\Java_Assesment\\src\\com\\company\\data.csv", content);
+            }
+            catch (IOException ioException)
+            {
+                ioException.printStackTrace();
+            }
+
+        }
+
     }
 }
 

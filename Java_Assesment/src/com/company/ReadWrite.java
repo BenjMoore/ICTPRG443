@@ -1,38 +1,49 @@
 package com.company;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.io.FileWriter;   // Import the FileWriter class
 import java.io.IOException;  // Import the IOException class to handle errors
+import java.io.BufferedReader;
+import java.io.FileReader;
 
 
-public class ReadWrite
+public class ReadWrite {
 
-{
+    public static List<String[]> read(String filename) throws IOException {
 
-    public static class WriteToFile {
+        List<String[]> data = new ArrayList<String[]>();
 
-        public static void main(String[] args) {
-            try
-            {
-                FileWriter myWriter = new FileWriter("/com.company/data.csv");
-                myWriter.write("Test");
-                myWriter.close();
-                System.out.println("Successfully wrote to the file.");
+        BufferedReader br = new BufferedReader(new FileReader(filename));
 
-            }
-            catch (IOException e)
-            {
-                System.out.println("An error occurred.");
-                e.printStackTrace();
-            }
+        String line;
+
+        while ((line = br.readLine()) != null) {
+            String[] row = line.split(",");
+            data.add(row);
         }
+
+        br.close();
+
+        return data;
+
     }
 
-}
+    public static void writeToFile(String fileName, String content) throws IOException {
+
+            List<String[]> data = new ArrayList<String[]>();
+
+            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
+            int i = 0;
+
+
+            writer.close();
+            System.out.println("Successfully wrote to the file.");
+
+        }
+
+        }
+
+
+
 
