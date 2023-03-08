@@ -7,12 +7,7 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.EventObject;
 import java.util.List;
 
 public class Main extends JFrame implements ActionListener {
@@ -436,6 +431,7 @@ public class Main extends JFrame implements ActionListener {
             // End array transfer //
 
             //Increment //
+            currentRecord = numOfEntry;
             numOfEntry++;
             // End Increment //
 
@@ -459,7 +455,7 @@ public class Main extends JFrame implements ActionListener {
                 currentRecord--;
                 displayEntry();
             }
-           
+
         }
         if(e.getSource() == FullBack)//Done
         {
