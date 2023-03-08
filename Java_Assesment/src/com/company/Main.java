@@ -54,7 +54,7 @@ public class Main extends JFrame implements ActionListener {
     public static JTextArea customerList;
     public static JLabel lblPhonenum;
     public static List<String[]> data;
-
+    public boolean isNewEntry = false;
  /// Data Model ///
 
     public static int currentRecord = 0;
@@ -425,7 +425,14 @@ public class Main extends JFrame implements ActionListener {
             newEntry.emailWeblink = txtEmail.getText();
             newEntry.contactNotes = txtNotes.getText();
             // End data transfer //
+            if (isNewEntry)
+            {
+                
+            }
+            else
+            {
 
+            }
             // Add data from object to array //
             relocationarray[numOfEntry] = newEntry;
             // End array transfer //
@@ -433,6 +440,7 @@ public class Main extends JFrame implements ActionListener {
             //Increment //
             currentRecord = numOfEntry;
             numOfEntry++;
+            displayEntry();
             // End Increment //
 
 
@@ -446,6 +454,7 @@ public class Main extends JFrame implements ActionListener {
             txtPhonenum.setText("");
             txtEmail.setText("");
             txtNotes.setText("");
+            isNewEntry = true;
             // End clear values //
         }
         if(e.getSource() == Back)//Done
