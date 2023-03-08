@@ -12,6 +12,7 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.EventObject;
 import java.util.List;
 
 public class Main extends JFrame implements ActionListener {
@@ -50,7 +51,6 @@ public class Main extends JFrame implements ActionListener {
     public static JButton New;
     public static JButton Save;
     public static JButton Delete;
-    public static JLabel ListLabel;
     public static JButton Exit;
     public static JButton txtSortbyName;
     public static JTextField txtFilter;
@@ -59,8 +59,16 @@ public class Main extends JFrame implements ActionListener {
     public static JTextArea customerList;
     public static JLabel lblPhonenum;
     public static List<String[]> data;
-    public static int currentRecord;
 
+ /// Data Model ///
+
+    public static int currentRecord = 0;
+    public static int numOfEntry = 0;
+
+    RelocationModel[] relocationarray = new RelocationModel[100];
+    RelocationModel newEntry = new RelocationModel();
+
+    /// End Data Model ///
     public static void main(String[] args) throws FileNotFoundException
     {
         new Main();
@@ -71,7 +79,8 @@ public class Main extends JFrame implements ActionListener {
 
     public Main() throws FileNotFoundException{
 
-        new ReadWrite();
+        //new BirthdayModel();
+
         SpringLayout myLayout = new SpringLayout();//Creating Spring layout
         this.setLayout(myLayout);//Setting spring layout to form
         this.setSize(600, 550);//Set Form size
@@ -388,90 +397,90 @@ public class Main extends JFrame implements ActionListener {
 
     }
 
+    private void displayEntry()
+    {
+        txtName.setText(relocationarray[currentRecord].contactName);
+        txtContactType.setText(relocationarray[currentRecord].contactType);
+        txtPhonenum.setText(relocationarray[currentRecord].phoneNUM);
+        txtEmail.setText(relocationarray[currentRecord].emailWeblink);
+        txtNotes.setText(relocationarray[currentRecord].contactNotes);
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         //If statements to check which component event triggered
-        if (e.getSource() == Exit) {
+        if (e.getSource() == Exit)//Done
+        {
             System.exit(0);//Close application
         }
-        if (e.getSource() == btnInput) {
+        if (e.getSource() == btnInput)//Done
+        {
             System.out.println(txtMessage.getText());//Gets text from textfield & prints to console
             txtMessage.setText("Hello Java Class");//Sets text in textfield.
         }
-        if(e.getSource() == Save)
+        if(e.getSource() == Save)//Done
         {
-            try {
-                data = ReadWrite.read("..\\ICTPRG443\\Java_Assesment\\src\\com\\company\\data.csv");
-                for (String[] row : data) {
-                    for (String cell : row) {
-                        System.out.print(cell + " <--> ");
-                        txtName.setText(row[0]);
-                        txtContactType.setText(row[1]);
-                        txtPhonenum.setText(row[2]);
-                        txtEmail.setText(row[3]);
-                        txtNotes.setText(row[4]);
+            // create a new empty DTO //
+            // End DTO //
 
-                    }
-                    System.out.println();
-                }
-            } catch (IOException f) {
-                System.err.println("Error reading CSV file: " + f.getMessage());
-            }
-        }
-        if(e.getSource() == New)
-        {
-            int i = 0;
-            BufferedWriter writer = null;
+            // Copy data from fields to object //
+            newEntry.contactName = txtName.getText();
+            newEntry.contactType = txtContactType.getText();
+            newEntry.phoneNUM = txtPhonenum.getText();
+            newEntry.emailWeblink = txtEmail.getText();
+            newEntry.contactNotes = txtNotes.getText();
+            // End data transfer //
 
-            try {
-                data.add(new String[5]);
-                currentRecord = data.size();
-                for (String[] row : data) {
-                    for (String cell : row) {
-                        System.out.print(cell + " <--> ");
-                        String txtbox = txtName.getText();
-                        data.add(txtbox);
-                        //txtContactType.getText(row[1]);
-                        //txtPhonenum.getText(row[2]);
-                        //txtEmail.getText(row[3]);
-                        //txtNotes.getText(row[4]);
+            // Add data from object to array //
+            relocationarray[numOfEntry] = newEntry;
+            // End array transfer //
 
-                    }
-                    System.out.println();
-                }
-                writer = new BufferedWriter(new FileWriter("..\\ICTPRG443\\Java_Assesment\\src\\com\\company\\data.csv", true));
+            //Increment //
+            numOfEntry++;
+            // End Increment //
 
-            }
-            catch (IOException ioException)
-            {
-                ioException.printStackTrace();
-            }
 
-            while (data != null)
-            {
-                try
-                {
-                    writer.write(String.valueOf(data.get(i)));
-                    i++;
-                }
-                catch (IOException ioException)
-                {
-                    ioException.printStackTrace();
-                }
-
-            }
-            String content = "\ntest";
-            try
-            {
-                ReadWrite.writeToFile("..\\ICTPRG443\\Java_Assesment\\src\\com\\company\\data.csv", content);
-            }
-            catch (IOException ioException)
-            {
-                ioException.printStackTrace();
-            }
 
         }
+        if(e.getSource() == New)//Done
+        {
+            // Clear values //
+            txtName.setText("");
+            txtContactType.setText("");
+            txtPhonenum.setText("");
+            txtEmail.setText("");
+            txtNotes.setText("");
+            // End clear values //
+        }
+        if(e.getSource() == Back)//Done
+        {
+            if (currentRecord > 0)
+            {
+                currentRecord--;
+                displayEntry();
+            }
+           
+        }
+        if(e.getSource() == FullBack)//Done
+        {
+            currentRecord = 0;
+            displayEntry();
 
+        }
+        if (e.getSource() == FullForward)//Done
+        {
+            currentRecord = numOfEntry -1;
+            displayEntry();
+
+        }
+        if(e.getSource() == Forward) //Done
+        {
+            if(currentRecord < numOfEntry - 1)
+            {
+                currentRecord++;
+                displayEntry();
+            }
+        }
     }
 }
 
