@@ -61,7 +61,6 @@ public class Main extends JFrame implements ActionListener {
     public static int numOfEntry = 0;
 
     RelocationModel[] relocationarray = new RelocationModel[100];
-    RelocationModel newEntry = new RelocationModel();
 
     /// End Data Model ///
     public static void main(String[] args) throws FileNotFoundException
@@ -399,6 +398,7 @@ public class Main extends JFrame implements ActionListener {
         txtPhonenum.setText(relocationarray[currentRecord].phoneNUM);
         txtEmail.setText(relocationarray[currentRecord].emailWeblink);
         txtNotes.setText(relocationarray[currentRecord].contactNotes);
+        System.out.println(relocationarray);
     }
 
     @Override
@@ -413,74 +413,93 @@ public class Main extends JFrame implements ActionListener {
             System.out.println(txtMessage.getText());//Gets text from textfield & prints to console
             txtMessage.setText("Hello Java Class");//Sets text in textfield.
         }
-        if(e.getSource() == Save)//Done
+        if (e.getSource() != New && e.getSource() != Save)
         {
-            // create a new empty DTO //
-            // End DTO //
-
-            // Copy data from fields to object //
-            newEntry.contactName = txtName.getText();
-            newEntry.contactType = txtContactType.getText();
-            newEntry.phoneNUM = txtPhonenum.getText();
-            newEntry.emailWeblink = txtEmail.getText();
-            newEntry.contactNotes = txtNotes.getText();
-            // End data transfer //
-            if (isNewEntry)
-            {
-                
-            }
-            else
-            {
-
-            }
-            // Add data from object to array //
-            relocationarray[numOfEntry] = newEntry;
-            // End array transfer //
-
-            //Increment //
-            currentRecord = numOfEntry;
-            numOfEntry++;
-            displayEntry();
-            // End Increment //
-
-
-
+            isNewEntry = false;
         }
-        if(e.getSource() == New)//Done
+
+        if (e.getSource() == New)
         {
-            // Clear values //
             txtName.setText("");
             txtContactType.setText("");
             txtPhonenum.setText("");
             txtEmail.setText("");
             txtNotes.setText("");
             isNewEntry = true;
-            // End clear values //
         }
-        if(e.getSource() == Back)//Done
+
+
+        if (e.getSource() == Save)
+        {
+            //Checks if the array is empty. If so it sets the save more to new.
+            if (numOfEntry == 0)
+            {
+                isNewEntry = true;
+            }
+
+            //Create a new empty data model object
+            RelocationModel newEntry = new RelocationModel();
+
+            //Copy data from entry fields on form to the model object
+            newEntry.contactName = txtName.getText();
+            newEntry.contactType = txtContactType.getText();
+            newEntry.phoneNUM = txtPhonenum.getText();
+            newEntry.emailWeblink = txtEmail.getText();
+            newEntry.contactNotes = txtNotes.getText();
+
+
+
+            if (isNewEntry)
+            {
+                //Add the data model object to the array
+                relocationarray[numOfEntry] = newEntry;
+                //Sets the current entry to the position the data was just saved at.
+                currentRecord = numOfEntry;
+                //Increment the numberOfEntries count to reflect the updated amount
+                numOfEntry++;
+            }
+            else
+            {
+                //Replace the current entry with the new
+                relocationarray[currentRecord] = newEntry;
+            }
+
+            isNewEntry = false;
+
+        }
+
+        if (e.getSource() == FullBack || e.getSource() ==Back || e.getSource() ==Forward || e.getSource() ==FullForward)
+        {
+            if (numOfEntry <= 0)
+            {
+                return;
+            }
+        }
+
+        if (e.getSource() == FullBack)
+        {
+            currentRecord = 0;
+            displayEntry();
+        }
+
+        if (e.getSource() == FullForward)
+        {
+            currentRecord = numOfEntry - 1;
+            displayEntry();
+        }
+
+        if (e.getSource() == Back)
         {
             if (currentRecord > 0)
             {
                 currentRecord--;
                 displayEntry();
             }
-
         }
-        if(e.getSource() == FullBack)//Done
-        {
-            currentRecord = 0;
-            displayEntry();
 
-        }
-        if (e.getSource() == FullForward)//Done
+        if (e.getSource() == Forward)
         {
-            currentRecord = numOfEntry -1;
-            displayEntry();
-
-        }
-        if(e.getSource() == Forward) //Done
-        {
-            if(currentRecord < numOfEntry - 1)
+            if (currentRecord < numOfEntry -1)
             {
                 currentRecord++;
                 displayEntry();
