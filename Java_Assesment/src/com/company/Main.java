@@ -417,7 +417,7 @@ public class Main extends JFrame implements ActionListener {
         {
             isNewEntry = false;
         }
-
+// test
         if (e.getSource() == New)
         {
             txtName.setText("");
