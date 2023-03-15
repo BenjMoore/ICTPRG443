@@ -13,7 +13,7 @@ import java.util.List;
 public class Main extends JFrame implements ActionListener {
 
 
-
+    FileManager file = new FileManager();
     ////////////////////////////////
     //// --- UI Components --- /////
     ////////////////////////////////
@@ -463,7 +463,7 @@ public class Main extends JFrame implements ActionListener {
                 //Replace the current entry with the new
                 relocationarray[currentRecord] = newEntry;
             }
-
+            file.WriteDataToFile(relocationarray);
             isNewEntry = false;
 
         }
