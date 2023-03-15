@@ -50,6 +50,7 @@ public class Main extends JFrame implements ActionListener {
     public static JButton txtSortbyName;
     public static JTextField txtFilter;
     public static JLabel txtFilters;
+    public static JLabel entryCount;
     public static JButton filterBtn;
     public static JTextArea customerList;
     public static JLabel lblPhonenum;
@@ -68,11 +69,12 @@ public class Main extends JFrame implements ActionListener {
         new Main();
         //ReadFile
 
+
     }
 
 
     public Main() throws FileNotFoundException{
-
+        setResizable(false);
         //new BirthdayModel();
 
         SpringLayout myLayout = new SpringLayout();//Creating Spring layout
@@ -90,7 +92,7 @@ public class Main extends JFrame implements ActionListener {
         this.add(lblTitle);
 
         Searchlbl = new JLabel("Company Search");
-        myLayout.putConstraint(SpringLayout.WEST, Searchlbl, 410, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.WEST, Searchlbl, 390, SpringLayout.WEST, this);
         myLayout.putConstraint(SpringLayout.NORTH, Searchlbl, 20, SpringLayout.NORTH, this);
         Searchlbl.setForeground(Color.BLACK);
         Searchlbl.setFont(new Font("Courier", Font.ITALIC, 15));
@@ -145,7 +147,15 @@ public class Main extends JFrame implements ActionListener {
         lblSearch.setFont(new Font("Calbri", Font.BOLD, 12));
         this.add(lblSearch);
 
+
         // List lable
+
+        entryCount = new JLabel( UpdateNumberOfEntriesCount() + " Contacts");
+        myLayout.putConstraint(SpringLayout.WEST, entryCount, 475, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.NORTH, entryCount, 330, SpringLayout.NORTH, this);
+        entryCount.setForeground(Color.BLACK);
+        entryCount.setFont(new Font("Calbri", Font.BOLD, 12));
+        this.add(entryCount);
 
         txtBinary_Sub = new JLabel("Contact List:");
         myLayout.putConstraint(SpringLayout.WEST, txtBinary_Sub, 15, SpringLayout.WEST, this);
@@ -399,8 +409,27 @@ public class Main extends JFrame implements ActionListener {
         txtEmail.setText(relocationarray[currentRecord].emailWeblink);
         txtNotes.setText(relocationarray[currentRecord].contactNotes);
         System.out.println(relocationarray);
+        UpdateNumberOfEntriesCount();
     }
 
+    private int UpdateNumberOfEntriesCount()
+    {
+        // track size of array
+        int count = 0;
+        // if not empty
+        for (int i = 0; i < relocationarray.length; i++)
+        {
+            // if empty
+            if (relocationarray[i] == null)
+            {
+                return count;
+            }
+
+            count++;
+        }
+        // return
+        return count;
+    }
     @Override
     public void actionPerformed(ActionEvent e) {
         //If statements to check which component event triggered
@@ -426,6 +455,7 @@ public class Main extends JFrame implements ActionListener {
             txtEmail.setText("");
             txtNotes.setText("");
             isNewEntry = true;
+            UpdateNumberOfEntriesCount();
         }
 
 
@@ -465,9 +495,32 @@ public class Main extends JFrame implements ActionListener {
             }
             file.WriteDataToFile(relocationarray);
             isNewEntry = false;
+            UpdateNumberOfEntriesCount();
 
         }
 
+        if(e.getSource() == Delete)
+        {
+            // if empty, do nothing
+            if(numOfEntry == 0)
+            {
+                return;
+            }
+            // cycle through the array
+            for (int i = currentRecord; i < numOfEntry; i++)
+            {
+                // if on the last entry
+                if(i == numOfEntry - 1)
+                {
+                    // set entry to null
+                    relocationarray[i] = null;
+                    // go back one pos in array
+                    currentRecord--;
+                }
+                // Otherwise, overwrite the entry with the element after it in the array
+                relocationarray[i] = relocationarray[i + 1];
+            }
+        }
         if (e.getSource() == FullBack || e.getSource() ==Back || e.getSource() ==Forward || e.getSource() ==FullForward)
         {
             if (numOfEntry <= 0)
