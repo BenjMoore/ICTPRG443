@@ -520,6 +520,10 @@ public class Main extends JFrame implements ActionListener {
                 // Otherwise, overwrite the entry with the element after it in the array
                 relocationarray[i] = relocationarray[i + 1];
             }
+            // Decrease the array count
+            numOfEntry--;
+            // update
+            displayEntry();
         }
         if (e.getSource() == FullBack || e.getSource() ==Back || e.getSource() ==Forward || e.getSource() ==FullForward)
         {
