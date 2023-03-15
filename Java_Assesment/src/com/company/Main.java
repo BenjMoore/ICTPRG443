@@ -524,6 +524,8 @@ public class Main extends JFrame implements ActionListener {
             numOfEntry--;
             // update
             displayEntry();
+            // update file
+            file.WriteDataToFile(relocationarray);
         }
         if (e.getSource() == FullBack || e.getSource() ==Back || e.getSource() ==Forward || e.getSource() ==FullForward)
         {
