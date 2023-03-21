@@ -76,7 +76,12 @@ public class Main extends JFrame implements ActionListener {
     public Main() throws FileNotFoundException{
         setResizable(false);
         //new BirthdayModel();
-
+        relocationarray = file.ReadDataFromFile();
+        if (relocationarray != null && relocationarray[0] != null)
+        {
+            numOfEntry = UpdateNumberOfEntriesCount();
+            displayEntry();
+        }
         SpringLayout myLayout = new SpringLayout();//Creating Spring layout
         this.setLayout(myLayout);//Setting spring layout to form
         this.setSize(600, 550);//Set Form size
