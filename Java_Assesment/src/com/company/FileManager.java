@@ -22,10 +22,10 @@ public class FileManager
                 }
                 // write file, string format [data];[data];[data]
                 writer.write(
-                        data[i].contactName + "||"
-                        + data[i].contactType + "||"
-                        +  data[i].phoneNUM + "||"
-                        + data[i].emailWeblink + "||"
+                        data[i].contactName + ";"
+                        + data[i].contactType + ";"
+                        +  data[i].phoneNUM + ";"
+                        + data[i].emailWeblink + ";"
                         + data[i].contactNotes
                 );
                 //new line
@@ -41,7 +41,7 @@ public class FileManager
             System.out.println("[! ERROR !]" +ex.getMessage());
         }
     }
-    public void LogError(String error)
+    public static void LogError(String error)
     {
         try
         {
@@ -62,7 +62,7 @@ public class FileManager
 
         }
     }
-    public RelocationModel[] ReadDataFromFile()
+    public static RelocationModel[] ReadDataFromFile()
     {
         // new instance of RelocationModel, Size 100
         RelocationModel[] data = new RelocationModel[100];
@@ -81,7 +81,7 @@ public class FileManager
             while ((line = reader.readLine()) != null)
             {
                 // split file using regex
-                String[] temp = line.split("||");
+                String[] temp = line.split(";");
                 // add entry to data model
                 RelocationModel newentry = new RelocationModel(temp[0],temp[1],temp[2],temp[3],temp[4]);
                 // set data

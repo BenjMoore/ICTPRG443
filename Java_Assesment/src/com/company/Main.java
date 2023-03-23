@@ -4,10 +4,17 @@ import javax.swing.border.Border;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
+import javax.swing.table.AbstractTableModel;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseListener;
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Main extends JFrame implements ActionListener {
@@ -56,6 +63,7 @@ public class Main extends JFrame implements ActionListener {
     public static JLabel lblPhonenum;
     public static List<String[]> data;
     public boolean isNewEntry = false;
+    public JTable Globaltable;
  /// Data Model ///
 
     public static int currentRecord = 0;
@@ -71,17 +79,96 @@ public class Main extends JFrame implements ActionListener {
 
 
     }
+    class MyModel extends AbstractTableModel {
+        ArrayList<Object[]> al;
 
+        // the headers
+        String[] header;
 
-    public Main() throws FileNotFoundException{
-        setResizable(false);
-        //new BirthdayModel();
-        relocationarray = file.ReadDataFromFile();
-        if (relocationarray != null && relocationarray[0] != null)
-        {
-            numOfEntry = UpdateNumberOfEntriesCount();
-            displayEntry();
+        // to hold the column index for the Sent column
+        int col;
+
+        // constructor
+        MyModel(ArrayList<Object[]> obj, String[] header) {
+            // save the header
+            this.header = header;
+            // and the data
+            al = obj;
+            // get the column index for the Sent column
+            col = this.findColumn("Sent");
         }
+
+        @Override
+        public int getRowCount() {
+            return 0;
+        }
+
+        @Override
+        public int getColumnCount() {
+            return 0;
+        }
+
+        @Override
+        public Object getValueAt(int rowIndex, int columnIndex) {
+            return null;
+        }
+    }
+        public void setupTable() throws IOException {
+        JPanel topPanel = new JPanel();
+        topPanel.setLayout(new BorderLayout());
+        add(topPanel);
+
+        // Create column names
+        String columnNames[] =
+                { "Question #", "Topic", "Subtopic"};
+
+        // Create some data
+        ArrayList<Object[]> al = new ArrayList();
+        MyModel quizModel;
+        // constructor of JTable model
+        quizModel = new MyModel(al, columnNames);
+
+        // Create a new table instance
+        Globaltable = new JTable(quizModel);
+        Globaltable.addMouseListener((MouseListener) this);
+        // Configure some of JTable's paramters
+        //table.isForegroundSet();
+        Globaltable.setShowHorizontalLines(false);
+        Globaltable.setRowSelectionAllowed(true);
+        Globaltable.setColumnSelectionAllowed(true);
+        add(Globaltable);
+
+        // Change the text and background colours
+        //table.setSelectionForeground(Color.white);
+        // table.setSelectionBackground(Color.red);
+
+        // Add the table to a scrolling pane, size and locate
+
+        JScrollPane scrollPane = JTable.createScrollPaneForTable(Globaltable);
+        topPanel.add(scrollPane, BorderLayout.CENTER);
+        topPanel.setPreferredSize(new Dimension(400, 150));
+        myLayout.putConstraint(SpringLayout.WEST, topPanel, 10, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.NORTH, topPanel, 150, SpringLayout.NORTH, this);
+
+        sorter = new TableRowSorter<TableModel>(quizModel);
+        Globaltable.setRowSorter(sorter);
+
+
+    }
+/*
+    public void filterSearch() {
+        String text = txtSearch.getText();
+        if (text.length() == 0) {
+            sorter.setRowFilter(null);
+        } else {
+            sorter.setRowFilter(RowFilter.regexFilter("(?i)" + text, 0,1,2));
+        }
+    }
+*/
+    public Main() throws FileNotFoundException{
+
+
+
         SpringLayout myLayout = new SpringLayout();//Creating Spring layout
         this.setLayout(myLayout);//Setting spring layout to form
         this.setSize(600, 550);//Set Form size
@@ -283,6 +370,8 @@ public class Main extends JFrame implements ActionListener {
         Forward.setBorder(compound);
         this.add(Forward);
 
+
+
         filterBtn = new JButton("Filer!");
         filterBtn.addActionListener(this);
         filterBtn.setSize(80, 25);
@@ -400,7 +489,12 @@ public class Main extends JFrame implements ActionListener {
 
         /// Table
 
-
+        relocationarray = file.ReadDataFromFile();
+        if (relocationarray != null && relocationarray[0] != null)
+        {
+            numOfEntry = UpdateNumberOfEntriesCount();
+            displayEntry();
+        }
         // Keep Visibility
         this.setVisible(true);//Keep this at bottom, Displays form on screen
 
@@ -416,6 +510,7 @@ public class Main extends JFrame implements ActionListener {
         System.out.println(relocationarray);
         UpdateNumberOfEntriesCount();
     }
+
 
     private int UpdateNumberOfEntriesCount()
     {
