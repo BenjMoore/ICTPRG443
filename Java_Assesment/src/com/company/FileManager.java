@@ -5,8 +5,9 @@ import java.io.*;
 
 public class FileManager
 {
-    String LogFile = "RelocationData.Oas";
-    String ErrorLog = "Errorlog.Oas";
+    private static String ErrorLog = "Errorlog.oas";
+    private static String LogFile = "RelocationData.Oas";
+
 
     public void WriteDataToFile(RelocationModel[] data){
         try
@@ -28,6 +29,7 @@ public class FileManager
                         + data[i].emailWeblink + ";"
                         + data[i].contactNotes
                 );
+
                 //new line
                 writer.newLine();
             }

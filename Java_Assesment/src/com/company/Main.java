@@ -75,6 +75,7 @@ public class Main extends JFrame implements ActionListener {
     public static void main(String[] args) throws FileNotFoundException
     {
         new Main();
+
         //ReadFile
 
 
@@ -113,14 +114,32 @@ public class Main extends JFrame implements ActionListener {
             return null;
         }
     }
-        public void setupTable() throws IOException {
+
+/*
+    public void filterSearch() {
+        String text = txtSearch.getText();
+        if (text.length() == 0) {
+            sorter.setRowFilter(null);
+        } else {
+            sorter.setRowFilter(RowFilter.regexFilter("(?i)" + text, 0,1,2));
+        }
+    }
+*/
+    public Main() throws FileNotFoundException{
+
         JPanel topPanel = new JPanel();
         topPanel.setLayout(new BorderLayout());
         add(topPanel);
 
         // Create column names
         String columnNames[] =
-                { "Question #", "Topic", "Subtopic"};
+                {
+                        "Contact Name:",
+                        "Contact Type:",
+                        "Phone Num: ",
+                        "Email Web Link:",
+                        "Contact Notes"
+                };
 
         // Create some data
         ArrayList<Object[]> al = new ArrayList();
@@ -137,12 +156,14 @@ public class Main extends JFrame implements ActionListener {
         Globaltable.setRowSelectionAllowed(true);
         Globaltable.setColumnSelectionAllowed(true);
         add(Globaltable);
+        Globaltable.setRowSorter(new TableRowSorter(quizModel));
 
-        // Change the text and background colours
-        //table.setSelectionForeground(Color.white);
-        // table.setSelectionBackground(Color.red);
+        SpringLayout myLayout = new SpringLayout();//Creating Spring layout
+        this.setLayout(myLayout);//Setting spring layout to form
+        this.setSize(600, 550);//Set Form size
+        this.getContentPane().setBackground(Color.lightGray);//Change form background color
+        this.setLocation(250, 250);//Set form start position
 
-        // Add the table to a scrolling pane, size and locate
 
         JScrollPane scrollPane = JTable.createScrollPaneForTable(Globaltable);
         topPanel.add(scrollPane, BorderLayout.CENTER);
@@ -150,30 +171,6 @@ public class Main extends JFrame implements ActionListener {
         myLayout.putConstraint(SpringLayout.WEST, topPanel, 10, SpringLayout.WEST, this);
         myLayout.putConstraint(SpringLayout.NORTH, topPanel, 150, SpringLayout.NORTH, this);
 
-        sorter = new TableRowSorter<TableModel>(quizModel);
-        Globaltable.setRowSorter(sorter);
-
-
-    }
-/*
-    public void filterSearch() {
-        String text = txtSearch.getText();
-        if (text.length() == 0) {
-            sorter.setRowFilter(null);
-        } else {
-            sorter.setRowFilter(RowFilter.regexFilter("(?i)" + text, 0,1,2));
-        }
-    }
-*/
-    public Main() throws FileNotFoundException{
-
-
-
-        SpringLayout myLayout = new SpringLayout();//Creating Spring layout
-        this.setLayout(myLayout);//Setting spring layout to form
-        this.setSize(600, 550);//Set Form size
-        this.getContentPane().setBackground(Color.lightGray);//Change form background color
-        this.setLocation(250, 250);//Set form start position
 
         // Title
         lblTitle = new JLabel("Relocation Manager");
