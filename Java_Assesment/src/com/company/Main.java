@@ -149,7 +149,7 @@ public class Main extends JFrame implements ActionListener {
 
         // Create a new table instance
         Globaltable = new JTable(quizModel);
-        Globaltable.addMouseListener((MouseListener) this);
+        //Globaltable.addMouseListener((MouseListener) this);
         // Configure some of JTable's paramters
         //table.isForegroundSet();
         Globaltable.setShowHorizontalLines(false);
@@ -157,7 +157,6 @@ public class Main extends JFrame implements ActionListener {
         Globaltable.setColumnSelectionAllowed(true);
         add(Globaltable);
         Globaltable.setRowSorter(new TableRowSorter(quizModel));
-
         SpringLayout myLayout = new SpringLayout();//Creating Spring layout
         this.setLayout(myLayout);//Setting spring layout to form
         this.setSize(600, 550);//Set Form size
@@ -167,9 +166,9 @@ public class Main extends JFrame implements ActionListener {
 
         JScrollPane scrollPane = JTable.createScrollPaneForTable(Globaltable);
         topPanel.add(scrollPane, BorderLayout.CENTER);
-        topPanel.setPreferredSize(new Dimension(400, 150));
+        topPanel.setPreferredSize(new Dimension(500, 150));
         myLayout.putConstraint(SpringLayout.WEST, topPanel, 10, SpringLayout.WEST, this);
-        myLayout.putConstraint(SpringLayout.NORTH, topPanel, 150, SpringLayout.NORTH, this);
+        myLayout.putConstraint(SpringLayout.NORTH, topPanel, 350, SpringLayout.NORTH, this);
 
 
         // Title
@@ -228,7 +227,6 @@ public class Main extends JFrame implements ActionListener {
         this.add(lblNotes);
 
         // Search
-
         lblSearch = new JLabel("<html><span bgcolor=\"Black\"> Company:  </span></html>");
         myLayout.putConstraint(SpringLayout.WEST, lblSearch, 335, SpringLayout.WEST, this);
         myLayout.putConstraint(SpringLayout.NORTH, lblSearch, 62, SpringLayout.NORTH, this);
@@ -238,7 +236,6 @@ public class Main extends JFrame implements ActionListener {
 
 
         // List lable
-
         entryCount = new JLabel( UpdateNumberOfEntriesCount() + " Contacts");
         myLayout.putConstraint(SpringLayout.WEST, entryCount, 475, SpringLayout.WEST, this);
         myLayout.putConstraint(SpringLayout.NORTH, entryCount, 330, SpringLayout.NORTH, this);
@@ -261,17 +258,6 @@ public class Main extends JFrame implements ActionListener {
         this.add(txtFilters);
 
         // Text Fields  \\
-        customerList = new JTextArea("Customers displayed here!");
-        customerList.setLineWrap(true);
-        customerList.setWrapStyleWord(true);
-        Border border = BorderFactory.createLineBorder(Color.BLACK);
-        customerList.setBorder(BorderFactory.createCompoundBorder(border,
-                BorderFactory.createEmptyBorder(50, 250, 50, 200)));
-
-        myLayout.putConstraint(SpringLayout.WEST, customerList, 10, SpringLayout.WEST, this);
-        myLayout.putConstraint(SpringLayout.NORTH, customerList, 350, SpringLayout.NORTH, this);
-        this.add(customerList);
-
         txtFilter = new JTextField("", 25);
         myLayout.putConstraint(SpringLayout.WEST, txtFilter, 100, SpringLayout.WEST, this);
         myLayout.putConstraint(SpringLayout.NORTH, txtFilter, 275, SpringLayout.NORTH, this);
@@ -324,9 +310,6 @@ public class Main extends JFrame implements ActionListener {
 
 
         // Buttons //
-
-
-
         Back = new JButton("<");
         Back.addActionListener(this);
         Back.setSize(80, 25);
