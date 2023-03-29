@@ -1,3 +1,7 @@
+// TAFE QLD ASSIGNMENT
+// Writen By Benjamin Moore
+// Last Edit 29/03/2023
+
 package com.company;
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -22,6 +26,7 @@ public class Main extends JFrame implements ActionListener {
 
 
 //-----------------Declare Labels---------------------\\
+    // Enjoy the declarations ;)\\
 
     public static  JButton btnClose;
     public static  Button btnInput;
@@ -116,14 +121,16 @@ public class Main extends JFrame implements ActionListener {
         this.setLocation(250, 250);//Set form start position
 
 
-        main_txt_area=new JTextArea("Welcome to javatpoint");
-        //area.setBounds(10,350, 200,300);
+        main_txt_area=new JTextArea("Relocation Manager");
+        JScrollPane scroll = new JScrollPane(main_txt_area);
         this.add(main_txt_area);
-        main_txt_area.setPreferredSize(new Dimension(600,100));
+        main_txt_area.setPreferredSize(new Dimension(550,130));
         main_txt_area.setLocation(200,100);
-        myLayout.putConstraint(SpringLayout.WEST, main_txt_area, 100, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.WEST, main_txt_area, 10, SpringLayout.WEST, this);
         myLayout.putConstraint(SpringLayout.NORTH, main_txt_area, 350, SpringLayout.NORTH, this);
+        scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         main_txt_area.setLineWrap(true);
+        main_txt_area.add(scroll);
 
 
 
@@ -191,13 +198,9 @@ public class Main extends JFrame implements ActionListener {
         this.add(lblSearch);
 
 
-        // List lable
-        entryCount = new JLabel( UpdateNumberOfEntriesCount() + " Contacts");
-        myLayout.putConstraint(SpringLayout.WEST, entryCount, 475, SpringLayout.WEST, this);
-        myLayout.putConstraint(SpringLayout.NORTH, entryCount, 330, SpringLayout.NORTH, this);
-        entryCount.setForeground(Color.BLACK);
-        entryCount.setFont(new Font("Calbri", Font.BOLD, 12));
-        this.add(entryCount);
+        // return
+
+
 
         txtBinary_Sub = new JLabel("Contact List:");
         myLayout.putConstraint(SpringLayout.WEST, txtBinary_Sub, 15, SpringLayout.WEST, this);
@@ -484,15 +487,15 @@ public class Main extends JFrame implements ActionListener {
             if (position >= 0)
             {
                 main_txt_area.append(txtFilter.getText() + " Is an index of: "+ (position + 1 ));
-
                 for(int i=0; i<numOfEntry; i++)
                 {
                     main_txt_area.append("\n");
                     main_txt_area.append(Name[i]);
-
                 }
             }
-        }
+            else{ main_txt_area.setText("No Client Found!"); }
+            }
+
         // END BINARY SEARCH \\
 
 
@@ -516,7 +519,7 @@ public class Main extends JFrame implements ActionListener {
     }
 
     // --------------------------- \\
-
+   // SORT BY CLIENT NAME \
     public void Sort(){
         String Name[] = new String[numOfEntry];
 
@@ -532,6 +535,8 @@ public class Main extends JFrame implements ActionListener {
         }
 
     }
+    // SORT BY CLIENT NAME END\\
+
     // ACTION LISTENER \\
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -646,7 +651,6 @@ public class Main extends JFrame implements ActionListener {
             currentRecord = numOfEntry - 1;
             displayEntry(currentRecord);
         }
-
         if (e.getSource() == Back)
         {
             if (currentRecord > 0)
@@ -655,7 +659,6 @@ public class Main extends JFrame implements ActionListener {
                 displayEntry(currentRecord);
             }
         }
-
         if (e.getSource() == Forward)
         {
             if (currentRecord < numOfEntry -1)
@@ -664,19 +667,17 @@ public class Main extends JFrame implements ActionListener {
                 displayEntry(currentRecord);
             }
         }
-
-        if (e.getSource() == Find){
+        if (e.getSource() == Find)
+        {
             txtSearch.setText("");
             Find();
             txtSearch.setText("");
         }
-
         if (e.getSource() == txtBinary_Submit)
         {
             main_txt_area.setText("");
             binarySearch();
         }
-
         if (e.getSource() == txtSortbyName)
         {
         main_txt_area.setText("");
