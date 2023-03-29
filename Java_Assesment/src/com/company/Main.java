@@ -8,6 +8,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
+import java.util.Arrays;
 import java.util.List;
 
 public class Main extends JFrame implements ActionListener {
@@ -92,22 +93,11 @@ public class Main extends JFrame implements ActionListener {
     }
     // END ADD TXT \\
 
-
    // MAIN CLASS \\
     public static void main(String[] args) throws FileNotFoundException { new Main(); }
     // END MAIN CLASS \\
 
 
-/*
-    public void filterSearch() {
-        String text = txtSearch.getText();
-        if (text.length() == 0) {
-            sorter.setRowFilter(null);
-        } else {
-            sorter.setRowFilter(RowFilter.regexFilter("(?i)" + text, 0,1,2));
-        }
-    }
-*/
     // CREATE AND SHAPE LABELS \\
     public Main() throws FileNotFoundException{
 
@@ -437,7 +427,7 @@ public class Main extends JFrame implements ActionListener {
         if (relocationarray != null && relocationarray[0] != null)
         {
             numOfEntry = UpdateNumberOfEntriesCount();
-            displayEntry();
+            displayEntry(currentRecord);
             addtxt();
         }
         // Keep Visibility
@@ -448,7 +438,7 @@ public class Main extends JFrame implements ActionListener {
 
 
     // DISPLAY TEXT FROM ARRAY \\
-    private void displayEntry()
+    private void displayEntry(int currentRecord)
     {
         txtName.setText(relocationarray[currentRecord].contactName);
         txtContactType.setText(relocationarray[currentRecord].contactType);
@@ -458,6 +448,52 @@ public class Main extends JFrame implements ActionListener {
         System.out.println(relocationarray);
         UpdateNumberOfEntriesCount();
     }
+
+    // SEARCH CONTACT NAME \\
+    public void Find()
+    {
+        String Name[] = new String[numOfEntry];
+
+        for(int i=0; i < numOfEntry;i++ ) {
+            Name[i] = relocationarray[i].getContactName();
+        }
+        Arrays.sort(Name);
+
+        int position = Arrays.binarySearch(Name,txtSearch.getText());
+        // position is -1
+        if (position >= 0)
+        {
+            displayEntry(position);
+        }
+    }
+    // END CONTACT SEARCH \\
+
+
+    // BINARY SEARCH \\
+    public void binarySearch()
+        {
+            String Name[] = new String[numOfEntry];
+
+            for(int i=0; i < numOfEntry;i++ ) {
+                Name[i] = relocationarray[i].getContactName();
+            }
+            Arrays.sort(Name);
+
+            int position = Arrays.binarySearch(Name,txtFilter.getText());
+            // position is -1
+            if (position >= 0)
+            {
+                main_txt_area.append(txtFilter.getText() + " Is an index of: "+ (position + 1 ));
+
+                for(int i=0; i<numOfEntry; i++)
+                {
+                    main_txt_area.append("\n");
+                    main_txt_area.append(Name[i]);
+
+                }
+            }
+        }
+        // END BINARY SEARCH \\
 
 
     // UPDATE ENTRIES FROM ARRAY \\
@@ -479,7 +515,24 @@ public class Main extends JFrame implements ActionListener {
         return count;
     }
 
+    // --------------------------- \\
 
+    public void Sort(){
+        String Name[] = new String[numOfEntry];
+
+        for(int i=0; i < numOfEntry;i++ ) {
+            Name[i] = relocationarray[i].getContactName();
+        }
+        Arrays.sort(Name);
+        int x = 0;
+        while(x != numOfEntry){
+            main_txt_area.append(Name[x]);
+            main_txt_area.append("\n");
+            x++;
+        }
+
+    }
+    // ACTION LISTENER \\
     @Override
     public void actionPerformed(ActionEvent e) {
         //If statements to check which component event triggered
@@ -496,7 +549,6 @@ public class Main extends JFrame implements ActionListener {
         {
             isNewEntry = false;
         }
-// test
         if (e.getSource() == New)
         {
             txtName.setText("");
@@ -507,8 +559,6 @@ public class Main extends JFrame implements ActionListener {
             isNewEntry = true;
             UpdateNumberOfEntriesCount();
         }
-
-
         if (e.getSource() == Save)
         {
             //Checks if the array is empty. If so it sets the save more to new.
@@ -551,7 +601,6 @@ public class Main extends JFrame implements ActionListener {
 
 
         }
-
         if(e.getSource() == Delete)
         {
             // if empty, do nothing
@@ -576,7 +625,7 @@ public class Main extends JFrame implements ActionListener {
             // Decrease the array count
             numOfEntry--;
             // update
-            displayEntry();
+            displayEntry(currentRecord);
             // update file
             file.WriteDataToFile(relocationarray);
         }
@@ -587,17 +636,15 @@ public class Main extends JFrame implements ActionListener {
                 return;
             }
         }
-
         if (e.getSource() == FullBack)
         {
             currentRecord = 0;
-            displayEntry();
+            displayEntry(currentRecord);
         }
-
         if (e.getSource() == FullForward)
         {
             currentRecord = numOfEntry - 1;
-            displayEntry();
+            displayEntry(currentRecord);
         }
 
         if (e.getSource() == Back)
@@ -605,7 +652,7 @@ public class Main extends JFrame implements ActionListener {
             if (currentRecord > 0)
             {
                 currentRecord--;
-                displayEntry();
+                displayEntry(currentRecord);
             }
         }
 
@@ -614,11 +661,33 @@ public class Main extends JFrame implements ActionListener {
             if (currentRecord < numOfEntry -1)
             {
                 currentRecord++;
-                displayEntry();
+                displayEntry(currentRecord);
             }
         }
-    }
-}
 
+        if (e.getSource() == Find){
+            txtSearch.setText("");
+            Find();
+            txtSearch.setText("");
+        }
+
+        if (e.getSource() == txtBinary_Submit)
+        {
+            main_txt_area.setText("");
+            binarySearch();
+        }
+
+        if (e.getSource() == txtSortbyName)
+        {
+        main_txt_area.setText("");
+        Sort();
+        }
+    }
+    // END ACTION LISTENER \\
+
+
+
+}
+// END OF PROGRAM \\
 
 
