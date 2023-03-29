@@ -4,27 +4,23 @@ import javax.swing.border.Border;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
-import javax.swing.table.AbstractTableModel;
-import javax.swing.table.TableModel;
-import javax.swing.table.TableRowSorter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseListener;
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Main extends JFrame implements ActionListener {
 
 
     FileManager file = new FileManager();
+
     ////////////////////////////////
     //// --- UI Components --- /////
     ////////////////////////////////
-    // Declare Lables //
+
+
+//-----------------Declare Labels---------------------\\
 
     public static  JButton btnClose;
     public static  Button btnInput;
@@ -65,23 +61,41 @@ public class Main extends JFrame implements ActionListener {
     public static List<String[]> data;
     public boolean isNewEntry = false;
     public JTable Globaltable;
- /// Data Model ///
 
+    //----------END DECLARE VAR---------\\
+
+
+    //-------- SET VALUES FOR CURRENT RECORD AND NUM OF ENTRY ----------\\
     public static int currentRecord = 0;
-    public static int numOfEntry = 0;
+    int numOfEntry = 0;
 
+    //-------------------------END SET VALUES----------------------------\\
+    // CREATE NEW RELOCATION ARRAY \\
     RelocationModel[] relocationarray = new RelocationModel[100];
+    // END\\
 
-    /// End Data Model ///
-    public static void main(String[] args) throws FileNotFoundException
+    // ADD TXT TO TXT FIELD \\
+    public void addtxt()
     {
-        new Main();
 
-
-        //ReadFile
-
+        int i = 0;
+        while(i != numOfEntry)
+        {
+            main_txt_area.append(relocationarray[i].getContactName() + "");
+            main_txt_area.append(relocationarray[i].getContactType() + "");
+            main_txt_area.append(relocationarray[i].getPhoneNUM() + "");
+            main_txt_area.append(relocationarray[i].getEmailWeblink() + "");
+            main_txt_area.append(relocationarray[i].getContactNotes() + "");
+            main_txt_area.append("\n");
+            i++;
+        }
     }
+    // END ADD TXT \\
 
+
+   // MAIN CLASS \\
+    public static void main(String[] args) throws FileNotFoundException { new Main(); }
+    // END MAIN CLASS \\
 
 
 /*
@@ -94,6 +108,7 @@ public class Main extends JFrame implements ActionListener {
         }
     }
 */
+    // CREATE AND SHAPE LABELS \\
     public Main() throws FileNotFoundException{
 
         JPanel topPanel = new JPanel();
@@ -101,12 +116,6 @@ public class Main extends JFrame implements ActionListener {
         add(topPanel);
 
         // Create column names
-        JTextArea area=new JTextArea("Welcome to javatpoint");
-        area.setBounds(100,350, 200,300);
-        this.add(area);
-        this.setSize(300,300);
-        this.setLayout(null);
-        this.setVisible(true);
 
         // Create a new table instance
 
@@ -116,6 +125,15 @@ public class Main extends JFrame implements ActionListener {
         this.getContentPane().setBackground(Color.lightGray);//Change form background color
         this.setLocation(250, 250);//Set form start position
 
+
+        main_txt_area=new JTextArea("Welcome to javatpoint");
+        //area.setBounds(10,350, 200,300);
+        this.add(main_txt_area);
+        main_txt_area.setPreferredSize(new Dimension(600,100));
+        main_txt_area.setLocation(200,100);
+        myLayout.putConstraint(SpringLayout.WEST, main_txt_area, 100, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.NORTH, main_txt_area, 350, SpringLayout.NORTH, this);
+        main_txt_area.setLineWrap(true);
 
 
 
@@ -415,19 +433,21 @@ public class Main extends JFrame implements ActionListener {
         this.add(txtSortbyName);
 
 
-        /// Table
-
         relocationarray = file.ReadDataFromFile();
         if (relocationarray != null && relocationarray[0] != null)
         {
             numOfEntry = UpdateNumberOfEntriesCount();
             displayEntry();
+            addtxt();
         }
         // Keep Visibility
         this.setVisible(true);//Keep this at bottom, Displays form on screen
 
     }
+    // END CREATE LABELS \\
 
+
+    // DISPLAY TEXT FROM ARRAY \\
     private void displayEntry()
     {
         txtName.setText(relocationarray[currentRecord].contactName);
@@ -440,7 +460,8 @@ public class Main extends JFrame implements ActionListener {
     }
 
 
-    private int UpdateNumberOfEntriesCount()
+    // UPDATE ENTRIES FROM ARRAY \\
+    public int UpdateNumberOfEntriesCount()
     {
         // track size of array
         int count = 0;
@@ -452,12 +473,13 @@ public class Main extends JFrame implements ActionListener {
             {
                 return count;
             }
-
             count++;
         }
         // return
         return count;
     }
+
+
     @Override
     public void actionPerformed(ActionEvent e) {
         //If statements to check which component event triggered
@@ -496,14 +518,15 @@ public class Main extends JFrame implements ActionListener {
             }
 
             //Create a new empty data model object
-            RelocationModel newEntry = new RelocationModel();
+            RelocationModel newEntry = new RelocationModel(txtName.getText(),
+            txtContactType.getText(),
+            txtPhonenum.getText(),
+            txtEmail.getText(),
+            txtNotes.getText()
+                    );
 
             //Copy data from entry fields on form to the model object
-            newEntry.contactName = txtName.getText();
-            newEntry.contactType = txtContactType.getText();
-            newEntry.phoneNUM = txtPhonenum.getText();
-            newEntry.emailWeblink = txtEmail.getText();
-            newEntry.contactNotes = txtNotes.getText();
+
 
 
 
@@ -524,6 +547,8 @@ public class Main extends JFrame implements ActionListener {
             file.WriteDataToFile(relocationarray);
             isNewEntry = false;
             UpdateNumberOfEntriesCount();
+
+
 
         }
 
