@@ -456,18 +456,22 @@ public class Main extends JFrame implements ActionListener {
     public void Find()
     {
         String Name[] = new String[numOfEntry];
-
+        String searchTerm = txtSearch.getText();
         for(int i=0; i < numOfEntry;i++ ) {
             Name[i] = relocationarray[i].getContactName();
         }
         Arrays.sort(Name);
+        //while(searchTerm != )
 
-        int position = Arrays.binarySearch(Name,txtSearch.getText());
+            // for loop all of location array backwards
+
+
+        //int position = Arrays.binarySearch(Name,searchTerm);
         // position is -1
-        if (position >= 0)
-        {
-            displayEntry(position);
-        }
+        //if (position >= 0)
+        //{
+        //    displayEntry(position);
+       // }
     }
     // END CONTACT SEARCH \\
 
@@ -669,7 +673,7 @@ public class Main extends JFrame implements ActionListener {
         }
         if (e.getSource() == Find)
         {
-            txtSearch.setText("");
+
             Find();
             txtSearch.setText("");
         }
