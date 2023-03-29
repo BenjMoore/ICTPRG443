@@ -35,6 +35,7 @@ public class Main extends JFrame implements ActionListener {
     public static JTextField txtNotes;
     public static  JTextField txtSearch;
     public static JTextField txtBinary_Query;
+    public static JTextArea main_txt_area;
     public static JLabel txtBinary_Sub;
     public static JButton txtBinary_Submit;
     public static JLabel Searchlbl;
@@ -76,44 +77,12 @@ public class Main extends JFrame implements ActionListener {
     {
         new Main();
 
+
         //ReadFile
 
-
     }
-    class MyModel extends AbstractTableModel {
-        ArrayList<Object[]> al;
 
-        // the headers
-        String[] header;
 
-        // to hold the column index for the Sent column
-        int col;
-
-        // constructor
-        MyModel(ArrayList<Object[]> obj, String[] header) {
-            // save the header
-            this.header = header;
-            // and the data
-            al = obj;
-            // get the column index for the Sent column
-            col = this.findColumn("Sent");
-        }
-
-        @Override
-        public int getRowCount() {
-            return 0;
-        }
-
-        @Override
-        public int getColumnCount() {
-            return 0;
-        }
-
-        @Override
-        public Object getValueAt(int rowIndex, int columnIndex) {
-            return null;
-        }
-    }
 
 /*
     public void filterSearch() {
@@ -132,31 +101,15 @@ public class Main extends JFrame implements ActionListener {
         add(topPanel);
 
         // Create column names
-        String columnNames[] =
-                {
-                        "Contact Name:",
-                        "Contact Type:",
-                        "Phone Num: ",
-                        "Email Web Link:",
-                        "Contact Notes"
-                };
-
-        // Create some data
-        ArrayList<Object[]> al = new ArrayList();
-        MyModel quizModel;
-        // constructor of JTable model
-        quizModel = new MyModel(data, columnNames);
+        JTextArea area=new JTextArea("Welcome to javatpoint");
+        area.setBounds(100,350, 200,300);
+        this.add(area);
+        this.setSize(300,300);
+        this.setLayout(null);
+        this.setVisible(true);
 
         // Create a new table instance
-        Globaltable = new JTable(quizModel);
-        //Globaltable.addMouseListener((MouseListener) this);
-        // Configure some of JTable's paramters
-        //table.isForegroundSet();
-        Globaltable.setShowHorizontalLines(false);
-        Globaltable.setRowSelectionAllowed(true);
-        Globaltable.setColumnSelectionAllowed(true);
-        add(Globaltable);
-        Globaltable.setRowSorter(new TableRowSorter(quizModel));
+
         SpringLayout myLayout = new SpringLayout();//Creating Spring layout
         this.setLayout(myLayout);//Setting spring layout to form
         this.setSize(600, 550);//Set Form size
@@ -164,11 +117,6 @@ public class Main extends JFrame implements ActionListener {
         this.setLocation(250, 250);//Set form start position
 
 
-        JScrollPane scrollPane = JTable.createScrollPaneForTable(Globaltable);
-        topPanel.add(scrollPane, BorderLayout.CENTER);
-        topPanel.setPreferredSize(new Dimension(500, 150));
-        myLayout.putConstraint(SpringLayout.WEST, topPanel, 10, SpringLayout.WEST, this);
-        myLayout.putConstraint(SpringLayout.NORTH, topPanel, 350, SpringLayout.NORTH, this);
 
 
         // Title
