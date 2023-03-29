@@ -145,7 +145,7 @@ public class Main extends JFrame implements ActionListener {
         ArrayList<Object[]> al = new ArrayList();
         MyModel quizModel;
         // constructor of JTable model
-        quizModel = new MyModel(al, columnNames);
+        quizModel = new MyModel(data, columnNames);
 
         // Create a new table instance
         Globaltable = new JTable(quizModel);
