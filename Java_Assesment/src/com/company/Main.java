@@ -455,12 +455,24 @@ public class Main extends JFrame implements ActionListener {
     // SEARCH CONTACT NAME \\
     public void Find()
     {
-        String Name[] = new String[numOfEntry];
         String searchTerm = txtSearch.getText();
-        for(int i=0; i < numOfEntry;i++ ) {
+
+        int found = 0;
+
+        String Name[] = new String[numOfEntry];
+
+        for (int i = 0; i < numOfEntry; i++)
+        {
             Name[i] = relocationarray[i].getContactName();
+
+
+            if(Name[i].contains(searchTerm))
+            {
+                displayEntry(i);
+                break;
+            }
         }
-        Arrays.sort(Name);
+
         //while(searchTerm != )
 
             // for loop all of location array backwards
