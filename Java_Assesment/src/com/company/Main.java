@@ -553,7 +553,7 @@ public class Main extends JFrame implements ActionListener {
         if (e.getSource() == btnInput)//Done
         {
             System.out.println(txtMessage.getText());//Gets text from textfield & prints to console
-            txtMessage.setText("Hello Java Class");//Sets text in textfield.
+            txtMessage.setText("Relocation Manager");//Sets text in textfield.
         }
         if (e.getSource() != New && e.getSource() != Save)
         {
