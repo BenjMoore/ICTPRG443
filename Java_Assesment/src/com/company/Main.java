@@ -28,45 +28,49 @@ public class Main extends JFrame implements ActionListener {
 //-----------------Declare Labels---------------------\\
     // Enjoy the declarations ;)\\
 
-    public static  JButton btnClose;
-    public static  Button btnInput;
-    public static  JTextField txtName;
-    public static JTextField txtContactType;
-    public static JTextField txtPhonenum;
-    public static JTextField txtEmail;
-    public static JTextField txtNotes;
-    public static  JTextField txtSearch;
-    public static JTextField txtBinary_Query;
+    // Text area
     public static JTextArea main_txt_area;
-    public static JLabel txtBinary_Sub;
-    public static JButton txtBinary_Submit;
-    public static JLabel Searchlbl;
-    public static JLabel lblTitle;
-    public static JLabel lblName;
-    public static JLabel lblContactType;
-    public static JLabel lblEmail;
-    public static JLabel lblNotes;
-    public static JLabel lblSearch;
-    public static JTextField txtMessage;
-    public static JButton FullBack;
-    public static JButton Back;
-    public static JButton Forward;
-    public static JButton FullForward;
-    public static JButton Find;
-    public static JButton New;
-    public static JButton Save;
-    public static JButton Delete;
-    public static JButton Exit;
-    public static JButton txtSortbyName;
-    public static JTextField txtFilter;
-    public static JLabel txtFilters;
-    public static JLabel entryCount;
-    public static JButton filterBtn;
-    public static JTextArea customerList;
-    public static JLabel lblPhonenum;
-    public static List<String[]> data;
-    public boolean isNewEntry = false;
-    public JTable Globaltable;
+    public static Button btnInput;
+
+    // Text Fields
+    public static JTextField
+            txtName,
+            txtEmail,
+            txtNotes,
+            txtSearch,
+            txtPhonenum,
+            txtContactType,
+            txtMessage,
+            txtFilter;
+
+    // Buttons
+    public static JButton
+            txtBinary_Submit,
+            FullBack,
+            Back,
+            Forward,
+            FullForward,
+            New,
+            Find,
+            Save,
+            Delete,
+            Exit,
+            txtSortbyName,
+            filterBtn;
+
+    // Jlabels
+    public static JLabel
+            Searchlbl,
+            lblTitle,
+            lblName,
+            lblContactType,
+            lblEmail,
+            lblNotes,
+            lblSearch,
+            txtBinary_Sub,
+            txtFilters,
+            lblPhonenum;
+
 
     //----------END DECLARE VAR---------\\
 
@@ -74,6 +78,7 @@ public class Main extends JFrame implements ActionListener {
     //-------- SET VALUES FOR CURRENT RECORD AND NUM OF ENTRY ----------\\
     public static int currentRecord = 0;
     int numOfEntry = 0;
+    public boolean isNewEntry = false;
 
     //-------------------------END SET VALUES----------------------------\\
     // CREATE NEW RELOCATION ARRAY \\
@@ -109,10 +114,6 @@ public class Main extends JFrame implements ActionListener {
         JPanel topPanel = new JPanel();
         topPanel.setLayout(new BorderLayout());
         add(topPanel);
-
-        // Create column names
-
-        // Create a new table instance
 
         SpringLayout myLayout = new SpringLayout();//Creating Spring layout
         this.setLayout(myLayout);//Setting spring layout to form
@@ -231,7 +232,7 @@ public class Main extends JFrame implements ActionListener {
         txtName.setFont(new Font("Calbri", Font.PLAIN, 9));
         this.add(txtName);
 
-        txtContactType = new JTextField("", 25);
+        JTextField txtContactType = new JTextField("", 25);
         myLayout.putConstraint(SpringLayout.WEST, txtContactType, 125, SpringLayout.WEST, this);
         myLayout.putConstraint(SpringLayout.NORTH, txtContactType, 95, SpringLayout.NORTH, this);
         txtContactType.setForeground(Color.BLACK);
@@ -468,6 +469,18 @@ public class Main extends JFrame implements ActionListener {
             if(Name[i].contains(searchTerm))
             {
                 displayEntry(i);
+                main_txt_area.setText("");
+                main_txt_area.append("Customer Record:" + i + "\n");
+                main_txt_area.append("Name:"+relocationarray[currentRecord].contactName);
+                main_txt_area.append("\n");
+                main_txt_area.append("Email:"+relocationarray[currentRecord].emailWeblink);
+                main_txt_area.append("\n");
+                main_txt_area.append("Contact Type:"+relocationarray[currentRecord].contactType);
+                main_txt_area.append("\n");
+                main_txt_area.append("Phone Number:"+relocationarray[currentRecord].phoneNUM);
+                main_txt_area.append("\n");
+                main_txt_area.append("Notes:"+relocationarray[currentRecord].contactNotes);
+
                 break;
             }
         }
