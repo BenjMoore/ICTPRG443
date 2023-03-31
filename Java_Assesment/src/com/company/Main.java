@@ -607,7 +607,7 @@ public class Main extends JFrame implements ActionListener {
             {
                 //Add the data model object to the array
                 relocationarray[numOfEntry] = newEntry;
-                //Sets the current entry to the position the data was just saved at.
+                //Sets the current entry to the position the data was just saved at..
                 currentRecord = numOfEntry;
                 //Increment the numberOfEntries count to reflect the updated amount
                 numOfEntry++;
