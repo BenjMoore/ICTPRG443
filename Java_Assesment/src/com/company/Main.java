@@ -465,7 +465,6 @@ public class Main extends JFrame implements ActionListener {
         {
             Name[i] = relocationarray[i].getContactName();
 
-
             if(Name[i].contains(searchTerm))
             {
                 displayEntry(i);
@@ -473,17 +472,7 @@ public class Main extends JFrame implements ActionListener {
             }
         }
 
-        //while(searchTerm != )
 
-            // for loop all of location array backwards
-
-
-        //int position = Arrays.binarySearch(Name,searchTerm);
-        // position is -1
-        //if (position >= 0)
-        //{
-        //    displayEntry(position);
-       // }
     }
     // END CONTACT SEARCH \\
 
