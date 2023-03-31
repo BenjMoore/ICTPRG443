@@ -13,7 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
 import java.util.Arrays;
-
+import java.util.List;
 
 public class Main extends JFrame implements ActionListener {
 
@@ -77,12 +77,13 @@ public class Main extends JFrame implements ActionListener {
 
     //-------------------------END SET VALUES----------------------------\\
     // CREATE NEW RELOCATION ARRAY \\
-    RelocationModel[] relocationarray;
+    RelocationModel[] relocationarray = new RelocationModel[100];
     // END\\
 
     // ADD TXT TO TXT FIELD \\
     public void addtxt()
     {
+
         int i = 0;
         while(i != numOfEntry)
         {
@@ -552,7 +553,7 @@ public class Main extends JFrame implements ActionListener {
         if (e.getSource() == btnInput)//Done
         {
             System.out.println(txtMessage.getText());//Gets text from textfield & prints to console
-            txtMessage.setText("Relocation Manager");//Sets text in textfield.
+            txtMessage.setText("Hello Java Class");//Sets text in textfield.
         }
         if (e.getSource() != New && e.getSource() != Save)
         {
