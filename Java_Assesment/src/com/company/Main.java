@@ -548,7 +548,7 @@ public class Main extends JFrame implements ActionListener {
 
         String Name[] = new String[numOfEntry];
         main_txt_area.setText("");
-        main_txt_area.setText("Search");
+        main_txt_area.setText("Search\n");
         for (int i = 0; i < numOfEntry; i++) {
             Name[i] = relocationarray[i].getContactName();
 
@@ -556,6 +556,7 @@ public class Main extends JFrame implements ActionListener {
                 displayEntry(i);
 
                 main_txt_area.append(Name[i]);
+                main_txt_area.append("\n");
                 break;
             }
         }
