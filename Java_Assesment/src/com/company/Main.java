@@ -116,34 +116,44 @@ public class Main extends JFrame implements ActionListener {
 
         SpringLayout myLayout = new SpringLayout();//Creating Spring layout
         this.setLayout(myLayout);//Setting spring layout to form
-        this.setSize(600, 550);//Set Form size
+        this.setSize(1200, 700);//Set Form size
         this.getContentPane().setBackground(Color.lightGray);//Change form background color
-        this.setLocation(250, 250);//Set form start position
+        this.setLocation(0, 0);//Set form start position
 
 
-        main_txt_area=new JTextArea("Relocation Manager");
-        JScrollPane scroll = new JScrollPane(main_txt_area);
-        this.add(main_txt_area);
-        main_txt_area.setPreferredSize(new Dimension(550,130));
+        main_txt_area = new JTextArea("Relocation Manager");
+
+        myLayout.putConstraint(SpringLayout.WEST,main_txt_area,10,SpringLayout.WEST,this);
+        myLayout.putConstraint(SpringLayout.NORTH,main_txt_area,350,SpringLayout.NORTH,this);
+
+
+        main_txt_area.setSize(550,100);
         main_txt_area.setLocation(200,100);
-        myLayout.putConstraint(SpringLayout.WEST, main_txt_area, 10, SpringLayout.WEST, this);
-        myLayout.putConstraint(SpringLayout.NORTH, main_txt_area, 350, SpringLayout.NORTH, this);
-        scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         main_txt_area.setLineWrap(true);
-        main_txt_area.add(scroll);
+        main_txt_area.setEditable(false);
+        main_txt_area.setVisible(true);
+
+        JScrollPane scroll = new JScrollPane(main_txt_area);
+        scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+
+        this.add(scroll);
+        this.setVisible(true);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
 
 
 
         // Title
         lblTitle = new JLabel("Relocation Manager");
-        myLayout.putConstraint(SpringLayout.WEST, lblTitle, 15, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.WEST, lblTitle, 600, SpringLayout.WEST, this);
         myLayout.putConstraint(SpringLayout.NORTH, lblTitle, 10, SpringLayout.NORTH, this);
         lblTitle.setForeground(Color.BLACK);
         lblTitle.setFont(new Font("Courier", Font.BOLD, 25));
         this.add(lblTitle);
 
         Searchlbl = new JLabel("Company Search");
-        myLayout.putConstraint(SpringLayout.WEST, Searchlbl, 390, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.WEST, Searchlbl, 975, SpringLayout.WEST, this);
         myLayout.putConstraint(SpringLayout.NORTH, Searchlbl, 20, SpringLayout.NORTH, this);
         Searchlbl.setForeground(Color.BLACK);
         Searchlbl.setFont(new Font("Courier", Font.ITALIC, 15));
@@ -151,7 +161,7 @@ public class Main extends JFrame implements ActionListener {
 
         // Persons Name
         lblName = new JLabel("<html><span bgcolor=\"Black\"> Contact Name:  </span></html>");
-        myLayout.putConstraint(SpringLayout.WEST, lblName, 25, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.WEST, lblName, 600, SpringLayout.WEST, this);
         myLayout.putConstraint(SpringLayout.NORTH, lblName, 65, SpringLayout.NORTH, this);
         lblName.setForeground(Color.WHITE);
         lblName.setFont(new Font("Calbri", Font.BOLD, 12));
@@ -159,7 +169,7 @@ public class Main extends JFrame implements ActionListener {
 
         // Likes
         lblContactType = new JLabel("<html><span bgcolor=\"Black\"> Contact Type:  </span></html>");
-        myLayout.putConstraint(SpringLayout.WEST, lblContactType, 25, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.WEST, lblContactType, 600, SpringLayout.WEST, this);
         myLayout.putConstraint(SpringLayout.NORTH, lblContactType, 95, SpringLayout.NORTH, this);
         lblContactType.setForeground(Color.WHITE);
         lblContactType.setFont(new Font("Calbri", Font.BOLD, 12));
@@ -167,7 +177,7 @@ public class Main extends JFrame implements ActionListener {
 
         // Dislikes
         lblPhonenum = new JLabel("<html><span bgcolor=\"Black\"> Phone/Mobile:  </span></html>");
-        myLayout.putConstraint(SpringLayout.WEST, lblPhonenum, 25, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.WEST, lblPhonenum, 600, SpringLayout.WEST, this);
         myLayout.putConstraint(SpringLayout.NORTH, lblPhonenum, 125, SpringLayout.NORTH, this);
         lblPhonenum.setForeground(Color.WHITE);
         lblPhonenum.setFont(new Font("Calbri", Font.BOLD, 12));
@@ -175,7 +185,7 @@ public class Main extends JFrame implements ActionListener {
 
         // Bday Day
         lblEmail = new JLabel("<html><span bgcolor=\"Black\"> Weblink/Email:  </span></html>");
-        myLayout.putConstraint(SpringLayout.WEST, lblEmail, 25, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.WEST, lblEmail, 600, SpringLayout.WEST, this);
         myLayout.putConstraint(SpringLayout.NORTH, lblEmail, 155, SpringLayout.NORTH, this);
         lblEmail.setForeground(Color.WHITE);
         lblEmail.setFont(new Font("Calbri", Font.BOLD, 12));
@@ -183,7 +193,7 @@ public class Main extends JFrame implements ActionListener {
 
         // Bday Month
         lblNotes = new JLabel("<html><span bgcolor=\"Black\"> Contact Notes:  </span></html>");
-        myLayout.putConstraint(SpringLayout.WEST, lblNotes, 25, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.WEST, lblNotes, 600, SpringLayout.WEST, this);
         myLayout.putConstraint(SpringLayout.NORTH, lblNotes, 185, SpringLayout.NORTH, this);
         lblNotes.setForeground(Color.WHITE);
         lblNotes.setFont(new Font("Calbri", Font.BOLD, 12));
@@ -191,7 +201,7 @@ public class Main extends JFrame implements ActionListener {
 
         // Search
         lblSearch = new JLabel("<html><span bgcolor=\"Black\"> Company:  </span></html>");
-        myLayout.putConstraint(SpringLayout.WEST, lblSearch, 335, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.WEST, lblSearch, 925, SpringLayout.WEST, this);
         myLayout.putConstraint(SpringLayout.NORTH, lblSearch, 62, SpringLayout.NORTH, this);
         lblSearch.setForeground(Color.WHITE);
         lblSearch.setFont(new Font("Calbri", Font.BOLD, 12));
@@ -217,50 +227,50 @@ public class Main extends JFrame implements ActionListener {
         this.add(txtFilters);
 
         // Text Fields  \\
-        txtFilter = new JTextField("", 25);
-        myLayout.putConstraint(SpringLayout.WEST, txtFilter, 100, SpringLayout.WEST, this);
-        myLayout.putConstraint(SpringLayout.NORTH, txtFilter, 275, SpringLayout.NORTH, this);
+        txtFilter = new JTextField("Text to Filter / Binary Search", 25);
+        myLayout.putConstraint(SpringLayout.WEST, txtFilter, 600, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.NORTH, txtFilter, 305, SpringLayout.NORTH, this);
         txtFilter.setForeground(Color.BLACK);
         txtFilter.setFont(new Font("Calbri", Font.PLAIN, 10));
         this.add(txtFilter);
 
         txtName = new JTextField("", 25);
-        myLayout.putConstraint(SpringLayout.WEST, txtName, 125, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.WEST, txtName, 700, SpringLayout.WEST, this);
         myLayout.putConstraint(SpringLayout.NORTH, txtName, 65, SpringLayout.NORTH, this);
         txtName.setForeground(Color.BLACK);
         txtName.setFont(new Font("Calbri", Font.PLAIN, 9));
         this.add(txtName);
 
         txtContactType = new JTextField("", 25);
-        myLayout.putConstraint(SpringLayout.WEST, txtContactType, 125, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.WEST, txtContactType, 700, SpringLayout.WEST, this);
         myLayout.putConstraint(SpringLayout.NORTH, txtContactType, 95, SpringLayout.NORTH, this);
         txtContactType.setForeground(Color.BLACK);
         txtContactType.setFont(new Font("Calbri", Font.PLAIN, 9));
         this.add(txtContactType);
 
         txtPhonenum = new JTextField("", 25);
-        myLayout.putConstraint(SpringLayout.WEST, txtPhonenum, 125, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.WEST, txtPhonenum, 700, SpringLayout.WEST, this);
         myLayout.putConstraint(SpringLayout.NORTH, txtPhonenum, 125, SpringLayout.NORTH, this);
         txtPhonenum.setForeground(Color.BLACK);
         txtPhonenum.setFont(new Font("Calbri", Font.PLAIN, 9));
         this.add(txtPhonenum);
 
         txtEmail = new JTextField("", 25);
-        myLayout.putConstraint(SpringLayout.WEST, txtEmail, 125, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.WEST, txtEmail, 700, SpringLayout.WEST, this);
         myLayout.putConstraint(SpringLayout.NORTH, txtEmail, 155, SpringLayout.NORTH, this);
         txtEmail.setForeground(Color.BLACK);
         txtEmail.setFont(new Font("Calbri", Font.PLAIN, 9));
         this.add(txtEmail);
 
         txtNotes = new JTextField("", 25);
-        myLayout.putConstraint(SpringLayout.WEST, txtNotes, 125, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.WEST, txtNotes, 700, SpringLayout.WEST, this);
         myLayout.putConstraint(SpringLayout.NORTH, txtNotes, 185, SpringLayout.NORTH, this);
         txtNotes.setForeground(Color.BLACK);
         txtNotes.setFont(new Font("Calbri", Font.PLAIN, 9));
         this.add(txtNotes);
 
         txtSearch = new JTextField("", 8);
-        myLayout.putConstraint(SpringLayout.WEST, txtSearch, 400, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.WEST, txtSearch, 1000, SpringLayout.WEST, this);
         myLayout.putConstraint(SpringLayout.NORTH, txtSearch, 60, SpringLayout.NORTH, this);
         txtSearch.setForeground(Color.BLACK);
         txtSearch.setFont(new Font("Calbri", Font.PLAIN, 12));
@@ -272,8 +282,8 @@ public class Main extends JFrame implements ActionListener {
         Back = new JButton("<");
         Back.addActionListener(this);
         Back.setSize(80, 25);
-        myLayout.putConstraint(SpringLayout.WEST, Back, 420, SpringLayout.WEST, this);
-        myLayout.putConstraint(SpringLayout.NORTH, Back, 180, SpringLayout.NORTH, this);
+        myLayout.putConstraint(SpringLayout.WEST, Back, 800, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.NORTH, Back, 350, SpringLayout.NORTH, this);
         Back.setForeground(Color.BLACK);
         Back.setBackground(Color.GRAY);
         Border line = new LineBorder(Color.BLACK);
@@ -285,8 +295,8 @@ public class Main extends JFrame implements ActionListener {
         FullBack = new JButton("|<");
         FullBack.addActionListener(this);
         FullBack.setSize(80, 25);
-        myLayout.putConstraint(SpringLayout.WEST, FullBack, 380, SpringLayout.WEST, this);
-        myLayout.putConstraint(SpringLayout.NORTH, FullBack, 180, SpringLayout.NORTH, this);
+        myLayout.putConstraint(SpringLayout.WEST, FullBack, 760, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.NORTH, FullBack, 350, SpringLayout.NORTH, this);
         FullBack.setForeground(Color.BLACK);
         FullBack.setBackground(Color.GRAY);
         Border line11 = new LineBorder(Color.BLACK);
@@ -299,8 +309,8 @@ public class Main extends JFrame implements ActionListener {
         Forward = new JButton(">");
         Forward.addActionListener(this);
         Forward.setSize(80, 25);
-        myLayout.putConstraint(SpringLayout.WEST, Forward, 460, SpringLayout.WEST, this);
-        myLayout.putConstraint(SpringLayout.NORTH, Forward, 180, SpringLayout.NORTH, this);
+        myLayout.putConstraint(SpringLayout.WEST, Forward, 840, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.NORTH, Forward, 350, SpringLayout.NORTH, this);
         Forward.setForeground(Color.BLACK);
         Forward.setBackground(Color.GRAY);
         Border line1 = new LineBorder(Color.BLACK);
@@ -314,8 +324,8 @@ public class Main extends JFrame implements ActionListener {
         filterBtn = new JButton("Filer!");
         filterBtn.addActionListener(this);
         filterBtn.setSize(80, 25);
-        myLayout.putConstraint(SpringLayout.WEST, filterBtn, 340, SpringLayout.WEST, this);
-        myLayout.putConstraint(SpringLayout.NORTH, filterBtn, 270, SpringLayout.NORTH, this);
+        myLayout.putConstraint(SpringLayout.WEST, filterBtn, 850, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.NORTH, filterBtn, 300, SpringLayout.NORTH, this);
         // FullBack.addActionListener(new ActionListener);
         filterBtn.setForeground(Color.BLACK);
         filterBtn.setBackground(Color.GRAY);
@@ -328,8 +338,8 @@ public class Main extends JFrame implements ActionListener {
         FullForward = new JButton(">|");
         FullForward.addActionListener(this);
         FullForward.setSize(80, 25);
-        myLayout.putConstraint(SpringLayout.WEST, FullForward, 500, SpringLayout.WEST, this);
-        myLayout.putConstraint(SpringLayout.NORTH, FullForward, 180, SpringLayout.NORTH, this);
+        myLayout.putConstraint(SpringLayout.WEST, FullForward, 880, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.NORTH, FullForward, 350, SpringLayout.NORTH, this);
         FullForward.setForeground(Color.BLACK);
         FullForward.setBackground(Color.GRAY);
         Border line3 = new LineBorder(Color.BLACK);
@@ -340,7 +350,7 @@ public class Main extends JFrame implements ActionListener {
 
         Find = new JButton("Find");
         Find.addActionListener(this);
-        myLayout.putConstraint(SpringLayout.WEST, Find, 500, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.WEST, Find, 1100, SpringLayout.WEST, this);
         myLayout.putConstraint(SpringLayout.NORTH, Find, 55, SpringLayout.NORTH, this);
         Find.setForeground(Color.BLACK);
         Find.setBackground(Color.GRAY);
@@ -352,8 +362,8 @@ public class Main extends JFrame implements ActionListener {
 
         Exit = new JButton("Exit");
         Exit.addActionListener(this);
-        myLayout.putConstraint(SpringLayout.WEST, Exit, 510, SpringLayout.WEST, this);
-        myLayout.putConstraint(SpringLayout.NORTH, Exit, 475, SpringLayout.NORTH, this);
+        myLayout.putConstraint(SpringLayout.WEST, Exit, 1100, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.NORTH, Exit, 600, SpringLayout.NORTH, this);
         Exit.setForeground(Color.BLACK);
         Exit.setBackground(Color.GRAY);
         Border line5 = new LineBorder(Color.BLACK);
@@ -365,7 +375,7 @@ public class Main extends JFrame implements ActionListener {
         ///
         New = new JButton("  New ");
         New.addActionListener(this);
-        myLayout.putConstraint(SpringLayout.WEST, New, 425, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.WEST, New, 1020, SpringLayout.WEST, this);
         myLayout.putConstraint(SpringLayout.NORTH, New, 100, SpringLayout.NORTH, this);
         New.setForeground(Color.BLACK);
         New.setBackground(Color.GRAY);
@@ -377,7 +387,7 @@ public class Main extends JFrame implements ActionListener {
 
         Save = new JButton(" Save ");
         Save.addActionListener(this);
-        myLayout.putConstraint(SpringLayout.WEST, Save, 425, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.WEST, Save, 1020, SpringLayout.WEST, this);
         myLayout.putConstraint(SpringLayout.NORTH, Save, 125, SpringLayout.NORTH, this);
         Save.setForeground(Color.BLACK);
         Save.setBackground(Color.GRAY);
@@ -389,7 +399,7 @@ public class Main extends JFrame implements ActionListener {
 
         Delete = new JButton("Delete");
         Delete.addActionListener(this);
-        myLayout.putConstraint(SpringLayout.WEST, Delete, 425, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.WEST, Delete, 1020, SpringLayout.WEST, this);
         myLayout.putConstraint(SpringLayout.NORTH, Delete, 150, SpringLayout.NORTH, this);
         Delete.setForeground(Color.BLACK);
         Delete.setBackground(Color.GRAY);
@@ -402,8 +412,8 @@ public class Main extends JFrame implements ActionListener {
         txtBinary_Submit = new JButton("Binary Search by contact name");
         txtBinary_Submit.addActionListener(this);
         txtBinary_Submit.setSize(80, 25);
-        myLayout.putConstraint(SpringLayout.WEST, txtBinary_Submit, 220, SpringLayout.WEST, this);
-        myLayout.putConstraint(SpringLayout.NORTH, txtBinary_Submit, 220, SpringLayout.NORTH, this);
+        myLayout.putConstraint(SpringLayout.WEST, txtBinary_Submit, 920, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.NORTH, txtBinary_Submit, 300, SpringLayout.NORTH, this);
         txtBinary_Submit.setForeground(Color.BLACK);
         txtBinary_Submit.setBackground(Color.GRAY);
         Border line9 = new LineBorder(Color.BLACK);
@@ -415,7 +425,7 @@ public class Main extends JFrame implements ActionListener {
         txtSortbyName = new JButton("Sort by contact name");
         txtSortbyName.addActionListener(this);
         txtSortbyName.setSize(80, 25);
-        myLayout.putConstraint(SpringLayout.WEST, txtSortbyName, 25, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.WEST, txtSortbyName, 900, SpringLayout.WEST, this);
         myLayout.putConstraint(SpringLayout.NORTH, txtSortbyName, 220, SpringLayout.NORTH, this);
         txtSortbyName.setForeground(Color.BLACK);
         txtSortbyName.setBackground(Color.GRAY);
@@ -475,7 +485,63 @@ public class Main extends JFrame implements ActionListener {
 
     }
     // END CONTACT SEARCH \\
+    public void Filter() {
+        String searchTerm = txtFilter.getText();
 
+        int found = 0;
+
+        String Name[] = new String[numOfEntry];
+        String contactName[] = new String[numOfEntry];
+        String contactType[] = new String[numOfEntry];
+        String phoneNUM[] = new String[numOfEntry];
+        String emailWeblink[] = new String[numOfEntry];
+        String contactNotes[] = new String[numOfEntry];
+        main_txt_area.setText("");
+        main_txt_area.setText("Search for >> ");
+        main_txt_area.append(searchTerm);
+        main_txt_area.append("<< \n");
+        int count = 0;
+        for (int i = 0; i < numOfEntry; i++) {
+            Name[i] = relocationarray[i].getContactNotes();
+            contactName[i] = relocationarray[i].getContactName();
+            contactType[i] = relocationarray[i].getContactType();
+            phoneNUM[i] = relocationarray[i].getPhoneNUM();
+            emailWeblink[i] = relocationarray[i].getEmailWeblink();
+
+            if (Name[i].contains(searchTerm)) {
+                displayEntry(i);
+
+                String contactNameF = String.format("Contact Name: %s!", contactName[i]);
+                main_txt_area.append(contactNameF);
+
+                main_txt_area.append("\n");
+
+                String contactTypeF = String.format("Contact Type: %s!", contactType[i]);
+                main_txt_area.append(contactTypeF);
+
+                main_txt_area.append("\n");
+
+                String phoneNUMF = String.format("Phone Num: %s!", phoneNUM[i]);
+                main_txt_area.append(phoneNUMF);
+
+                main_txt_area.append("\n");
+
+                String emailWebLinkF = String.format("Email Web Link: %s!", emailWeblink[i]);
+                main_txt_area.append(emailWebLinkF);
+
+                main_txt_area.append("\n");
+
+                String NameF = String.format("Contact Notes: %s!", Name[i]);
+                main_txt_area.append(NameF);
+
+                main_txt_area.append("\n");
+                String Count = String.format("|------------------------------|");
+                main_txt_area.append(Count);
+                main_txt_area.append("\n");
+                count++;
+            }
+        }
+    }
 
     // BINARY SEARCH \\
     public void binarySearch()
@@ -494,8 +560,17 @@ public class Main extends JFrame implements ActionListener {
                 main_txt_area.append(txtFilter.getText() + " Is an index of: "+ (position + 1 ));
                 for(int i=0; i<numOfEntry; i++)
                 {
-                    main_txt_area.append("\n");
-                    main_txt_area.append(Name[i]);
+                    if(i == position)
+                    {
+                        main_txt_area.append("\n");
+                        main_txt_area.append(Name[i]);
+                        main_txt_area.append(" <<< Here!");
+                    }
+                    else
+                    {
+                        main_txt_area.append("\n");
+                        main_txt_area.append(Name[i]);
+                    }
                 }
             }
             else{ main_txt_area.setText("No Client Found!"); }
@@ -529,7 +604,7 @@ public class Main extends JFrame implements ActionListener {
         String Name[] = new String[numOfEntry];
 
         for(int i=0; i < numOfEntry;i++ ) {
-            Name[i] = relocationarray[i].getContactName();
+            Name[i] = relocationarray[i].getContactNotes();
         }
         Arrays.sort(Name);
         int x = 0;
@@ -545,6 +620,10 @@ public class Main extends JFrame implements ActionListener {
     // ACTION LISTENER \\
     @Override
     public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == filterBtn)
+        {
+            Filter();
+        }
         //If statements to check which component event triggered
         if (e.getSource() == Exit)//Done
         {
