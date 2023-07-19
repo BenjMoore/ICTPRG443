@@ -1,6 +1,6 @@
 package com.company;
 
-import javax.imageio.plugins.tiff.TIFFImageReadParam;
+
 import java.io.*;
 
 public class FileManager

@@ -615,7 +615,28 @@ public class Main extends JFrame implements ActionListener {
         }
 
     }
-    // SORT BY CLIENT NAME END\\
+
+    public void Filter() {
+        String searchTerm = txtFilter.getText();
+
+        int found = 0;
+
+        String Name[] = new String[numOfEntry];
+        main_txt_area.setText("");
+        main_txt_area.setText("Search\n");
+        for (int i = 0; i < numOfEntry; i++) {
+            Name[i] = relocationarray[i].getContactName();
+
+            if (Name[i].contains(searchTerm)) {
+                displayEntry(i);
+
+                main_txt_area.append(Name[i]);
+                main_txt_area.append("\n");
+                break;
+            }
+        }
+    }
+        // SORT BY CLIENT NAME END\\
 
     // ACTION LISTENER \\
     @Override
@@ -625,6 +646,12 @@ public class Main extends JFrame implements ActionListener {
             Filter();
         }
         //If statements to check which component event triggered
+        if (e.getSource() == filterBtn)//Done
+        {
+            Filter();
+
+            //Close application
+        }
         if (e.getSource() == Exit)//Done
         {
             System.exit(0);//Close application
