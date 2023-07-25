@@ -616,26 +616,7 @@ public class Main extends JFrame implements ActionListener {
 
     }
 
-    public void Filter() {
-        String searchTerm = txtFilter.getText();
-
-        int found = 0;
-
-        String Name[] = new String[numOfEntry];
-        main_txt_area.setText("");
-        main_txt_area.setText("Search\n");
-        for (int i = 0; i < numOfEntry; i++) {
-            Name[i] = relocationarray[i].getContactName();
-
-            if (Name[i].contains(searchTerm)) {
-                displayEntry(i);
-
-                main_txt_area.append(Name[i]);
-                main_txt_area.append("\n");
-                break;
-            }
-        }
-    }
+    
         // SORT BY CLIENT NAME END\\
 
     // ACTION LISTENER \\
