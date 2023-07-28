@@ -487,7 +487,7 @@ public class Main extends JFrame implements ActionListener {
     // END CONTACT SEARCH \\
     public void Filter() {
         String searchTerm = txtFilter.getText();
-
+        String searchName = txtName.getText();
         int found = 0;
 
         String Name[] = new String[numOfEntry];
@@ -508,7 +508,7 @@ public class Main extends JFrame implements ActionListener {
             phoneNUM[i] = relocationarray[i].getPhoneNUM();
             emailWeblink[i] = relocationarray[i].getEmailWeblink();
 
-            if (Name[i].contains(searchTerm)) {
+            if (Name[i].contains(searchTerm) || Name[i].contains(searchName)) {
                 displayEntry(i);
 
                 String contactNameF = String.format("Contact Name: %s!", contactName[i]);
