@@ -81,6 +81,12 @@ public class Main extends JFrame implements ActionListener {
     // END\\
 
     // ADD TXT TO TXT FIELD \\
+     /*
+
+        Adds text to the text fields
+
+
+         */
     public void addtxt()
     {
 
@@ -99,11 +105,25 @@ public class Main extends JFrame implements ActionListener {
     // END ADD TXT \\
 
    // MAIN CLASS \\
+     /*
+
+       main class, calls main
+        @param args String[]
+        @throws FileNotFoundException
+
+         */
     public static void main(String[] args) throws FileNotFoundException { new Main(); }
     // END MAIN CLASS \\
 
 
     // CREATE AND SHAPE LABELS \\
+     /*
+
+       Main method that initialises all of the jframe components, the jframe itself
+
+        @throws FileNotFoundException
+
+         */
     public Main() throws FileNotFoundException{
 
         JPanel topPanel = new JPanel();
@@ -451,6 +471,13 @@ public class Main extends JFrame implements ActionListener {
 
 
     // DISPLAY TEXT FROM ARRAY \\
+     /*
+
+      displays the current record in text area
+        @param currentRecord
+
+
+         */
     private void displayEntry(int currentRecord)
     {
         txtName.setText(relocationarray[currentRecord].contactName);
@@ -463,6 +490,13 @@ public class Main extends JFrame implements ActionListener {
     }
 
     // SEARCH CONTACT NAME \\
+     /*
+
+        Searches array based on name, displays in text area
+        @param searchTerm
+
+
+         */
     public void Find()
     {
         String searchTerm = txtSearch.getText();
@@ -485,6 +519,13 @@ public class Main extends JFrame implements ActionListener {
 
     }
     // END CONTACT SEARCH \\
+     /*
+
+       Filters the array based on either the contact notes or name
+        @param searchTerm, searchName
+
+
+         */
     public void Filter() {
         String searchTerm = txtFilter.getText();
         String searchName = txtName.getText();
@@ -501,6 +542,7 @@ public class Main extends JFrame implements ActionListener {
         main_txt_area.append(searchTerm);
         main_txt_area.append("<< \n");
         int count = 0;
+
         for (int i = 0; i < numOfEntry; i++) {
             Name[i] = relocationarray[i].getContactNotes();
             contactName[i] = relocationarray[i].getContactName();
@@ -508,7 +550,8 @@ public class Main extends JFrame implements ActionListener {
             phoneNUM[i] = relocationarray[i].getPhoneNUM();
             emailWeblink[i] = relocationarray[i].getEmailWeblink();
 
-            if (Name[i].contains(searchTerm) || Name[i].contains(searchName)) {
+            if (Name[i].contains(searchTerm) || contactName[i].contains(searchName))
+            {
                 displayEntry(i);
 
                 String contactNameF = String.format("Contact Name: %s!", contactName[i]);
@@ -544,6 +587,12 @@ public class Main extends JFrame implements ActionListener {
     }
 
     // BINARY SEARCH \\
+     /*
+
+        binary searches the array for a specific value. displays the value with a highlight
+
+
+         */
     public void binarySearch()
         {
             String Name[] = new String[numOfEntry];
@@ -580,6 +629,13 @@ public class Main extends JFrame implements ActionListener {
 
 
     // UPDATE ENTRIES FROM ARRAY \\
+     /*
+
+        Updates the number of entries
+        @param null
+        @returns count the count of the entries
+
+         */
     public int UpdateNumberOfEntriesCount()
     {
         // track size of array
@@ -600,6 +656,11 @@ public class Main extends JFrame implements ActionListener {
 
     // --------------------------- \\
    // SORT BY CLIENT NAME \
+     /*
+
+       Sorts the array
+
+         */
     public void Sort(){
         String Name[] = new String[numOfEntry];
 
@@ -620,6 +681,14 @@ public class Main extends JFrame implements ActionListener {
         // SORT BY CLIENT NAME END\\
 
     // ACTION LISTENER \\
+     /*
+
+       actionPerformed
+       class to manage action triggers
+        @param ActionEvent e
+
+
+         */
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == filterBtn)
