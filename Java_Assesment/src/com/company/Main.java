@@ -13,6 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class Main extends JFrame implements ActionListener {
@@ -91,17 +92,23 @@ public class Main extends JFrame implements ActionListener {
     {
 
         int i = 0;
-        while(i != numOfEntry)
-        {
-            main_txt_area.append(relocationarray[i].getContactName() + "");
-            main_txt_area.append(relocationarray[i].getContactType() + "");
-            main_txt_area.append(relocationarray[i].getPhoneNUM() + "");
-            main_txt_area.append(relocationarray[i].getEmailWeblink() + "");
-            main_txt_area.append(relocationarray[i].getContactNotes() + "");
+        while(i != numOfEntry) {
+
+            main_txt_area.append("-------------------------------------\n");
+            main_txt_area.append("Name: " + relocationarray[i].contactName); // Print the sorted name
+            main_txt_area.append("\n"); // Add a separator
+            main_txt_area.append("Contact Type: " + relocationarray[i].contactType);
             main_txt_area.append("\n");
+            main_txt_area.append("Phone Number: " + relocationarray[i].phoneNUM);
+            main_txt_area.append("\n");
+            main_txt_area.append("Email: " + relocationarray[i].emailWeblink);
+            main_txt_area.append("\n");
+            main_txt_area.append("Contact Notes: " + relocationarray[i].contactNotes + "\n");
             i++;
+
         }
-    }
+        }
+
     // END ADD TXT \\
 
    // MAIN CLASS \\
@@ -124,7 +131,7 @@ public class Main extends JFrame implements ActionListener {
         @throws FileNotFoundException
 
          */
-    public Main() throws FileNotFoundException{
+    public Main() throws FileNotFoundException {
 
         JPanel topPanel = new JPanel();
         topPanel.setLayout(new BorderLayout());
@@ -134,21 +141,19 @@ public class Main extends JFrame implements ActionListener {
 
         // Create a new table instance
 
-        SpringLayout myLayout = new SpringLayout();//Creating Spring layout
-        this.setLayout(myLayout);//Setting spring layout to form
-        this.setSize(1200, 700);//Set Form size
-        this.getContentPane().setBackground(Color.lightGray);//Change form background color
-        this.setLocation(0, 0);//Set form start position
-
+        SpringLayout myLayout = new SpringLayout(); // Creating Spring layout
+        this.setLayout(myLayout); // Setting spring layout to form
+        this.setSize(1200, 1000); // Set Form size
+        this.getContentPane().setBackground(Color.lightGray); // Change form background color
+        this.setLocation(0, 0); // Set form start position
 
         main_txt_area = new JTextArea("Relocation Manager");
 
-        myLayout.putConstraint(SpringLayout.WEST,main_txt_area,10,SpringLayout.WEST,this);
-        myLayout.putConstraint(SpringLayout.NORTH,main_txt_area,350,SpringLayout.NORTH,this);
+        myLayout.putConstraint(SpringLayout.WEST, main_txt_area, 10, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.NORTH, main_txt_area, 350, SpringLayout.NORTH, this);
 
-
-        main_txt_area.setSize(550,100);
-        main_txt_area.setLocation(200,100);
+        main_txt_area.setSize(500, 1000); // Adjusted width and height
+        main_txt_area.setLocation(200, 300);
         main_txt_area.setLineWrap(true);
         main_txt_area.setEditable(false);
         main_txt_area.setVisible(true);
@@ -157,14 +162,16 @@ public class Main extends JFrame implements ActionListener {
         scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 
+        // Set the preferred size of the scroll pane
+        scroll.setPreferredSize(new Dimension(500, 1000)); // Adjusted width and height
+
         this.add(scroll);
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 
 
-
-        // Title
+    // Title
         lblTitle = new JLabel("Relocation Manager");
         myLayout.putConstraint(SpringLayout.WEST, lblTitle, 600, SpringLayout.WEST, this);
         myLayout.putConstraint(SpringLayout.NORTH, lblTitle, 10, SpringLayout.NORTH, this);
@@ -172,7 +179,7 @@ public class Main extends JFrame implements ActionListener {
         lblTitle.setFont(new Font("Courier", Font.BOLD, 25));
         this.add(lblTitle);
 
-        Searchlbl = new JLabel("Company Search");
+        Searchlbl = new JLabel("Name Search");
         myLayout.putConstraint(SpringLayout.WEST, Searchlbl, 975, SpringLayout.WEST, this);
         myLayout.putConstraint(SpringLayout.NORTH, Searchlbl, 20, SpringLayout.NORTH, this);
         Searchlbl.setForeground(Color.BLACK);
@@ -232,15 +239,9 @@ public class Main extends JFrame implements ActionListener {
 
 
 
-        txtBinary_Sub = new JLabel("Contact List:");
-        myLayout.putConstraint(SpringLayout.WEST, txtBinary_Sub, 15, SpringLayout.WEST, this);
-        myLayout.putConstraint(SpringLayout.NORTH, txtBinary_Sub, 325, SpringLayout.NORTH, this);
-        txtBinary_Sub.setForeground(Color.black);
-        txtBinary_Sub.setFont(new Font("Calbri", Font.BOLD, 13));
-        this.add(txtBinary_Sub);
 
         txtFilters = new JLabel("Filter By:");
-        myLayout.putConstraint(SpringLayout.WEST, txtFilters, 15, SpringLayout.WEST, this);
+        myLayout.putConstraint(SpringLayout.WEST, txtFilters, 600, SpringLayout.WEST, this);
         myLayout.putConstraint(SpringLayout.NORTH, txtFilters, 275, SpringLayout.NORTH, this);
         txtFilters.setForeground(Color.black);
         txtFilters.setFont(new Font("Calbri", Font.BOLD, 13));
@@ -383,7 +384,7 @@ public class Main extends JFrame implements ActionListener {
         Exit = new JButton("Exit");
         Exit.addActionListener(this);
         myLayout.putConstraint(SpringLayout.WEST, Exit, 1100, SpringLayout.WEST, this);
-        myLayout.putConstraint(SpringLayout.NORTH, Exit, 600, SpringLayout.NORTH, this);
+        myLayout.putConstraint(SpringLayout.NORTH, Exit, 900, SpringLayout.NORTH, this);
         Exit.setForeground(Color.BLACK);
         Exit.setBackground(Color.GRAY);
         Border line5 = new LineBorder(Color.BLACK);
@@ -459,7 +460,9 @@ public class Main extends JFrame implements ActionListener {
         relocationarray = file.ReadDataFromFile();
         if (relocationarray != null && relocationarray[0] != null)
         {
+
             numOfEntry = UpdateNumberOfEntriesCount();
+
             displayEntry(currentRecord);
             addtxt();
         }
@@ -480,6 +483,7 @@ public class Main extends JFrame implements ActionListener {
          */
     private void displayEntry(int currentRecord)
     {
+
         txtName.setText(relocationarray[currentRecord].contactName);
         txtContactType.setText(relocationarray[currentRecord].contactType);
         txtPhonenum.setText(relocationarray[currentRecord].phoneNUM);
@@ -661,24 +665,52 @@ public class Main extends JFrame implements ActionListener {
        Sorts the array
 
          */
-    public void Sort(){
-        String Name[] = new String[numOfEntry];
+    public void Sort() {
+        // Create arrays to store information for sorting
+        String[] Name = new String[numOfEntry];
+        String[] ContactType = new String[numOfEntry];
+        String[] PhoneNum = new String[numOfEntry];
+        String[] EmailLink = new String[numOfEntry];
+        String[] ContactNotes = new String[numOfEntry];
 
-        for(int i=0; i < numOfEntry;i++ ) {
-            Name[i] = relocationarray[i].getContactNotes();
+        // Populate arrays with data from relocationarray
+        for (int i = 0; i < numOfEntry; i++) {
+            Name[i] = relocationarray[i].getContactName();
+            ContactType[i] = relocationarray[i].getContactType();
+            PhoneNum[i] = relocationarray[i].getPhoneNUM();
+            EmailLink[i] = relocationarray[i].getEmailWeblink();
+            ContactNotes[i] = relocationarray[i].getContactNotes();
         }
-        Arrays.sort(Name);
-        int x = 0;
-        while(x != numOfEntry){
-            main_txt_area.append(Name[x]);
+
+        // Create a custom sorting mechanism to keep track of original indices
+        Integer[] indices = new Integer[numOfEntry];
+        for (int i = 0; i < numOfEntry; i++) {
+            indices[i] = i;
+        }
+        Arrays.sort(indices, Comparator.comparing(nameIndex -> Name[nameIndex]));
+        main_txt_area.append("----------- Sorted By Name ----------\n");
+        // Display sorted information
+        for (int x = 0; x < numOfEntry; x++) {
+            int index = indices[x];
+            main_txt_area.append("-------------------------------------\n");
+            main_txt_area.append("Name: "+Name[index]); // Print the sorted name
+            main_txt_area.append("\n"); // Add a separator
+            main_txt_area.append("Contact Type: "+ContactType[index]);
             main_txt_area.append("\n");
-            x++;
-        }
+            main_txt_area.append("Phone Number: "+PhoneNum[index]);
+            main_txt_area.append("\n");
+            main_txt_area.append("Email: "+EmailLink[index]);
+            main_txt_area.append("\n");
+            main_txt_area.append("Contact Notes: "+ContactNotes[index]+"\n");
 
+        }
+            main_txt_area.append("-------------------------------------\n");
     }
 
-    
-        // SORT BY CLIENT NAME END\\
+
+
+
+    // SORT BY CLIENT NAME END\\
 
     // ACTION LISTENER \\
      /*
