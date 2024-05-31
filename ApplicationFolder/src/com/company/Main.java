@@ -27,7 +27,7 @@ public class Main extends JFrame implements ActionListener {
 
 
 //-----------------Declare Labels---------------------\\
-    // Enjoy the declarations ;)\\
+    
 
     public static  JButton btnClose;
     public static  Button btnInput;
