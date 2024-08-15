@@ -7,10 +7,8 @@ import java.io.IOException;  // Import the IOException class to handle errors
 import java.io.BufferedReader;
 import java.io.FileReader;
 
-
+/** Abstract data model for the application **/
 public class RelocationModel {
-
-
 
     public String contactName;
     public String contactType;

@@ -2,7 +2,7 @@ package com.company;
 
 
 import java.io.*;
-
+/** Manages Read And Write Input and Output**/
 public class FileManager
 {
     private static String ErrorLog = "Errorlog.oas";

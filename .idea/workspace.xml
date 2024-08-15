@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="dc8e10d8-0072-49a7-8a73-8f6cde4f5900" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/allclasses-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/allpackages-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/allpackages-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/com/company/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/com/company/Main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/com/company/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/com/company/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/com/company/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/com/company/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/element-list" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/element-list" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/help-doc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-10.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-10.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-11.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-11.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-12.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-12.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-13.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-13.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-14.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-14.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-4.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-5.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-6.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-6.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-7.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-7.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-8.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-8.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-9.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-9.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/legal/jquery.md" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/legal/jquery.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/legal/jqueryUI.md" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/legal/jqueryUI.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/member-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/member-search-index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/overview-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/package-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/package-search-index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/script-dir/jquery-3.6.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/script-dir/jquery-3.6.1.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/script-dir/jquery-ui.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/script-dir/jquery-ui.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/script-dir/jquery-ui.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/script-dir/jquery-ui.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/serialized-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/serialized-form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/type-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/type-search-index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/out/production/ApplicationFolder/com/company/BTNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/out/production/ApplicationFolder/com/company/BinaryTree.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/out/production/ApplicationFolder/com/company/FileManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/out/production/ApplicationFolder/com/company/FileManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/out/production/ApplicationFolder/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/out/production/ApplicationFolder/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/out/production/ApplicationFolder/com/company/RelocationModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/out/production/ApplicationFolder/com/company/RelocationModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/out/production/ApplicationFolder/com/company/Scripts/BubbleSort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/out/production/ApplicationFolder/com/company/Scripts/Connection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/out/production/ApplicationFolder/com/company/Scripts/InsertionSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/out/production/ApplicationFolder/com/company/Scripts/InsertionSort.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/out/production/ApplicationFolder/com/company/Scripts/LinkedList$Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/out/production/ApplicationFolder/com/company/Scripts/LinkedList$Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/out/production/ApplicationFolder/com/company/Scripts/LinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/out/production/ApplicationFolder/com/company/Scripts/LinkedList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/out/production/ApplicationFolder/com/company/Scripts/Quicksort.class" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/out/production/ApplicationFolder/com/company/Scripts/Quicksort.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/out/production/ApplicationFolder/com/company/Scripts/SelectionSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/out/production/ApplicationFolder/com/company/Scripts/SelectionSort.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/src/com/company/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/src/com/company/FileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/src/com/company/RelocationModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/src/com/company/RelocationModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/src/com/company/Scripts/BinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/src/com/company/Scripts/BinaryTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/src/com/company/Scripts/BubbleSort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ICTPRG443Done.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RelocationData.Oas" beforeDir="false" afterPath="$PROJECT_DIR$/RelocationData.Oas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legal/jquery.md" beforeDir="false" afterPath="$PROJECT_DIR$/legal/jquery.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/legal/jqueryUI.md" beforeDir="false" afterPath="$PROJECT_DIR$/legal/jqueryUI.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICTPRG443/com/company/BTNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICTPRG443/com/company/BinaryTree.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICTPRG443/com/company/FileManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICTPRG443/com/company/FileManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICTPRG443/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICTPRG443/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICTPRG443/com/company/ReadWrite.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICTPRG443/com/company/RelocationModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICTPRG443/com/company/RelocationModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICTPRG443/com/company/Scripts/BubbleSort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICTPRG443/com/company/Scripts/Connection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICTPRG443/com/company/Scripts/InsertionSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICTPRG443/com/company/Scripts/InsertionSort.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICTPRG443/com/company/Scripts/LinkedList$Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICTPRG443/com/company/Scripts/LinkedList$Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICTPRG443/com/company/Scripts/LinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICTPRG443/com/company/Scripts/LinkedList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICTPRG443/com/company/Scripts/Quicksort.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICTPRG443/com/company/Scripts/Quicksort.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICTPRG443/com/company/Scripts/SelectionSort.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICTPRG443/com/company/Scripts/SelectionSort.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ICTPRG443/com/company/Scripts/read.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/script-dir/jquery-3.6.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/script-dir/jquery-3.6.1.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script-dir/jquery-ui.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/script-dir/jquery-ui.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script-dir/jquery-ui.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/script-dir/jquery-ui.min.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 5
+}]]></component>
+  <component name="ProjectId" id="2kg6ieP65J8sONzEdfhOV6xd8Sn" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dc8e10d8-0072-49a7-8a73-8f6cde4f5900" name="Changes" comment="" />
+      <created>1723693000496</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1723693000496</updated>
+    </task>
+    <servers />
+  </component>
+</project>
