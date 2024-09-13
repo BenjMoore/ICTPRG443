@@ -1,3 +1,6 @@
-John Doe;Customer;123-456-7890;johndoe@example.com;Customer inquiry
+;;;;
 Jane Smith;Supplier;987-654-3210;janesmith@example.com;Supplier agreement
-David Johnson;Partner;456-789-0123;davidjohnson@example.com;Meeting scheduled
+Alex Richards;Partner;456-789-0123;davidRichards@example.com;Meeting scheduled
+David Example;Partner;456-789-0123;davidExample@example.com;Meeting scheduled
+Ben Moore;Pager;1300655506;benmoore@example.com;Banned from the office
+Troy Vaughn;Fax;123456789;TroyVaughn@example.com;Hi Troy

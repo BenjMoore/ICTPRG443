@@ -1,15 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="8" />
+    <option name="CUSTOM_SCOPE_NAME" value="Module 'ICTPRG443'" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc8e10d8-0072-49a7-8a73-8f6cde4f5900" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationFolder/Errorlog.oas" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApplicationFolder/RelocationData.Oas" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/allclasses-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/allpackages-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/allpackages-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/com/company/FileManager.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/com/company/FileManager.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/com/company/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/com/company/Main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/com/company/RelocationModel.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/com/company/RelocationModel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/com/company/Scripts/InsertionSort.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/com/company/Scripts/InsertionSort.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/com/company/Scripts/LinkedList.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/com/company/Scripts/LinkedList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/com/company/Scripts/Quicksort.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/com/company/Scripts/Quicksort.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/com/company/Scripts/SelectionSort.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/com/company/Scripts/SelectionSort.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/com/company/Scripts/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/com/company/Scripts/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/com/company/Scripts/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/com/company/Scripts/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/com/company/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/com/company/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/com/company/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/com/company/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/copy.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/help-doc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-10.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-10.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-11.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-11.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-12.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-12.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-13.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-13.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-14.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-14.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-15.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-15.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-16.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-16.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-17.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-17.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-18.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-18.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-4.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-5.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-6.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-6.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-7.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-7.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-8.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-8.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-9.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index-files/index-9.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/legal/ADDITIONAL_LICENSE_INFO" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/legal/ADDITIONAL_LICENSE_INFO" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/legal/ASSEMBLY_EXCEPTION" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/legal/ASSEMBLY_EXCEPTION" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/legal/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/legal/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/legal/jquery.md" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/legal/jquery.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/legal/jqueryUI.md" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/legal/jqueryUI.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/link.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/member-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/member-search-index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/overview-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/overview-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/overview-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/resources/glass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/resources/x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/script-dir/jquery-3.6.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/script-dir/jquery-ui.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/script-dir/jquery-ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/search-page.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/serialized-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/serialized-form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/stylesheet.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/type-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/JavaDocs/type-search-index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ApplicationFolder/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApplicationFolder/src/com/company/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ICTPRG443/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ICTPRG443/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RelocationData.Oas" beforeDir="false" afterPath="$PROJECT_DIR$/RelocationData.Oas" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/glass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/x.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,20 +107,5 @@
       <updated>1723693000496</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/ApplicationFolder/src/com/company/Main.java</url>
-          <line>90</line>
-          <properties class="com.company.Main" method="addtxt">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
